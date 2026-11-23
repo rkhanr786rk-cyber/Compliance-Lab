@@ -590,7 +590,7 @@ body{background:var(--paper)}
 /* hero and hub */
 .hero{background:linear-gradient(180deg,var(--bar),color-mix(in srgb,var(--bar) 86%,#000));color:var(--barink);border-bottom:3px double color-mix(in srgb,var(--barink) 35%,transparent)}
 .hero-in{max-width:60rem;margin:auto;padding:clamp(2rem,6vw,4rem) 1.5rem clamp(1.6rem,4vw,2.6rem)}
-.hero h1{margin:0;font:700 clamp(2.3rem,6vw,3.7rem)/1.02 var(--sans);letter-spacing:-.02em;color:var(--barink);text-wrap:balance}
+.hero h1{margin:0 0 1.8rem;font:700 clamp(2.3rem,6vw,3.7rem)/1.02 var(--sans);letter-spacing:-.02em;color:var(--barink);text-wrap:balance}
 .hero .lede{max-width:41rem;margin:.9rem 0 1.5rem;color:color-mix(in srgb,var(--barink) 82%,transparent)}
 .hero .field{border:0;background:var(--page);border-radius:3px;box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
 .hero .field .sym{align-self:stretch;display:flex;align-items:center;margin:0;padding:0 1.15rem;background:var(--tape);color:#fff;font-size:1.6rem}
@@ -914,8 +914,8 @@ function renderHome() {
       ${card("generators/", "gen", "Document generators", "Resolutions, notices, minutes, declarations, policies and filing packs, plus all the model resolutions. Fill in a form and download a Word file.", "56 documents and 190 model resolutions")}
       ${card("excel/", "xls", "Excel utilities", "Statutory registers, trackers, planners, filing and audit checklists, depreciation and ratio workbooks as free Excel files.", "32 workbooks")}
       ${card("calendar/", "cal", "Compliance calendar", "Company-law due dates for your year end and AGM date, with a calendar file to download.", "")}
-      ${card("stamp/", "calc", "Stamp duty on companies", "Stamp duty on the MoA, AoA and capital increase, state by state, from the MCA rate table.", "")}}
-      ${card("#/tools", "calc", "Compliance and date calculator", "Notice periods, AGM and ROC due dates, deadlines after an event.", "")}
+      ${card("stamp/", "calc", "Stamp duty on companies", "Stamp duty on the MoA, AoA and capital increase, state by state, from the MCA rate table.", "")}
+      ${card("#/tools", "calc", "Notice and date calculator", "Notice periods, AGM and ROC due dates, deadlines after an event.", "")}
       ${card("#/me", "me", "My workspace", "Saved sections, your private notes and recently read pages.", "")}
     </div></section>`;
 }
@@ -1838,8 +1838,8 @@ document.addEventListener("click", e => {
 
 function lastFYE() { const t = new Date(), y = t.getMonth() >= 3 ? t.getFullYear() : t.getFullYear() - 1; return `${y}-03-31`; }
 function showTools() {
-  S.cur = null; S.d = null; S.token++; setChrome(false); navMark("tools"); document.title = "Compliance and date calculator | Companies Act, 2013 Reader";
-  show(`<section class="pg"><h1>Compliance and date calculator</h1><p class="lede">The statutory time limits a Company Secretary counts every week, worked out for you, each with its section.</p>
+  S.cur = null; S.d = null; S.token++; setChrome(false); navMark("tools"); document.title = "Notice and date calculator | Companies Act, 2013 Reader";
+  show(`<section class="pg"><h1>Notice and date calculator</h1><p class="lede">The statutory time limits a Company Secretary counts every week, worked out for you, each with its section.</p>
     <div class="copick"><label>Company name (optional, shown in your calendar entries)<input type="text" id="co-name" autocomplete="organization" placeholder="For example, ABC Private Limited"></label></div>
     <div class="box" id="c-notice"><h3>Notice of a meeting</h3>
       <div class="row"><label>Meeting<select id="n-type"><option value="21">General meeting (21 clear days)</option><option value="7">Board meeting (7 days)</option></select></label>
