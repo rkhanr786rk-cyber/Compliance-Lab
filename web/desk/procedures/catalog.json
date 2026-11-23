@@ -1,0 +1,980 @@
+{
+  "workflows": [
+    {
+      "id": "board-meeting",
+      "title": "Convene a Board meeting",
+      "category": "Board governance",
+      "summary": "Prepare the notice and agenda, establish quorum and take the minutes through signature.",
+      "scope": "Ordinary Board meeting of an Indian company. Check class exemptions, the articles and the applicable SS-1 scope. A one-director OPC has a separate procedure.",
+      "related": [
+        "act-173",
+        "act-174",
+        "act-118",
+        "act-184",
+        "rule-board-3",
+        "lodr-29",
+        "lodr-30"
+      ],
+      "templates": [
+        "board-notice",
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · SS-1 on Board meetings",
+          "url": "https://www.icsi.edu/media/webmodules/Final_SS-1.pdf"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Set the meeting date",
+          "detail": "Check the previous meeting, the statutory interval, the articles and any class exemption. Reserve a venue or video facility and confirm who is authorised to convene the meeting.",
+          "reference": "Section 173 · SS-1, paragraphs 1–2"
+        },
+        {
+          "title": "Send notice and papers",
+          "detail": "Give each director written notice, the agenda and supporting papers. Ordinarily allow at least seven days, plus postal service time where applicable. For urgent business at shorter notice, document the reason and follow the independent-director safeguards.",
+          "reference": "Section 173(3) · SS-1, paragraph 1.3"
+        },
+        {
+          "title": "Check exchange intimation",
+          "detail": "For a listed company, match the agenda to Regulation 29 and schedule any required advance intimation before the meeting. Allocate responsibility for reporting any disclosable decision.",
+          "reference": "LODR Regulations 29 and 30"
+        },
+        {
+          "title": "Record attendance and decisions",
+          "detail": "Check quorum at the start and for each item. Record attendance mode, declarations of interest, abstentions, decisions, dissent and the person responsible for each action.",
+          "reference": "Sections 174 and 184 · SS-1, paragraphs 3–5"
+        },
+        {
+          "title": "Finalise the minutes",
+          "detail": "Circulate the draft within 15 days of conclusion. Allow seven days from circulation for directors’ comments. Enter the minutes within 30 days, arrange signature and circulate the signed copy in accordance with SS-1.",
+          "reference": "Section 118 · SS-1, paragraphs 7.4–7.6"
+        },
+        {
+          "title": "Close filings and actions",
+          "detail": "Check each decision for event disclosure, a registrable resolution or another filing. Keep notices, delivery evidence, attendance and the signed minutes with the meeting record.",
+          "reference": "Sections 117–118 · LODR Regulation 30 · SS-1, paragraph 8"
+        }
+      ],
+      "guides": [
+        "ss1",
+        "archive-board-meeting"
+      ]
+    },
+    {
+      "id": "appoint-director",
+      "title": "Appoint an additional director",
+      "category": "Directors",
+      "summary": "Check the Board’s authority, document the appointment and prepare DIR-12.",
+      "scope": "Appointment by the Board under section 161(1). An independent director, managing director, nominee or a person resident outside India can trigger further requirements.",
+      "related": [
+        "act-161",
+        "act-152",
+        "act-164",
+        "act-165",
+        "act-170",
+        "rule-directors-8",
+        "rule-directors-18",
+        "lodr-17",
+        "lodr-30"
+      ],
+      "templates": [
+        "dir-2",
+        "board-notice",
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · Section 161 on additional directors",
+          "url": "https://e-book.icsi.edu/Actpagedisplay.aspx?PAGENAME=17545"
+        },
+        {
+          "label": "MCA · DIR-12 webform instruction kit",
+          "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_Form%20No%20DIR%2012.pdf"
+        },
+        {
+          "label": "MCA · File DIR-12 or DIR-11",
+          "url": "https://www.mca.gov.in/content/mca/global/en/mca/e-filing/din-related-forms.html"
+        },
+        {
+          "label": "MCA · V3 company webform FAQs",
+          "url": "https://www.mca.gov.in/Ministry/pdf/46_forms_FAQs_07_Feb_2022_reviwed_by_MCA.pdf"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Confirm the appointment route",
+          "detail": "Identify the enabling article. Check that the proposed director has not previously failed to secure appointment at a general meeting in the circumstances of section 161(1). Record the board-composition checks.",
+          "reference": "Sections 149 and 161(1)"
+        },
+        {
+          "title": "Obtain the director’s particulars",
+          "detail": "Verify DIN and eligibility, directorship limits, disqualification declarations, written consent and relevant interests. Obtain any nomination and remuneration committee recommendation required for the company.",
+          "reference": "Sections 152, 164, 165, 178 and 184 · Directors Rules 8 and 14"
+        },
+        {
+          "title": "Approve the appointment",
+          "detail": "Place the candidate’s particulars and effective date before the Board. Record the decision and issue the appointment communication. Diary the earlier of the next AGM and the last date on which it should have been held.",
+          "reference": "Section 161(1) · SS-1"
+        },
+        {
+          "title": "File the company’s return",
+          "detail": "File DIR-12 within 30 days of appointment. Enter the director’s details, complete the webform consent and declaration with the corresponding DSC and supply the documents required for the chosen designation. Retain the SRN and outcome.",
+          "reference": "Sections 152(5) and 170(2) · Directors Rules 8 and 18 · MCA DIR-12 kit"
+        },
+        {
+          "title": "Update records and calendar",
+          "detail": "Update the directors and KMP register. If continued service is proposed, prepare the members’ appointment process in time. Check eligibility for any exemption from the section 160 notice and deposit requirements.",
+          "reference": "Sections 152, 160, 161 and 170"
+        },
+        {
+          "title": "Complete listed-company disclosures",
+          "detail": "If applicable, disclose the appointment to the exchanges and check the shareholder approval deadline in Regulation 17(1C), including its exceptions. Use the earliest applicable approval date in the calendar.",
+          "reference": "LODR Regulations 17(1C) and 30 · Schedule III, Part A"
+        }
+      ],
+      "guides": [
+        "dir12",
+        "v3",
+        "archive-appoint-director"
+      ]
+    },
+    {
+      "id": "director-interests",
+      "title": "Record directors’ disclosures of interest",
+      "category": "Directors",
+      "summary": "Collect MBP-1, note changes at the Board and retain the disclosure with the company records.",
+      "scope": "General notices under section 184(1). Review each proposed contract separately for transaction-specific interests, participation restrictions and applicable exemptions.",
+      "related": [
+        "act-184",
+        "act-189",
+        "rule-board-9",
+        "lodr-23"
+      ],
+      "templates": [
+        "mbp-1"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · Rule 9 on disclosure of interests",
+          "url": "https://e-book.icsi.edu/Actpagedisplay.aspx?PAGENAME=18099"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Identify the relevant meeting",
+          "detail": "Collect the notice for the first Board meeting in which a director participates, the first Board meeting of each financial year, and the first Board meeting after a disclosed interest changes.",
+          "reference": "Section 184(1)"
+        },
+        {
+          "title": "Complete the notice",
+          "detail": "Have each director identify interests in bodies corporate, firms and other associations, with the nature of the interest and shareholding details. Review the dated, signed MBP-1 against the director’s own information.",
+          "reference": "Board Powers Rule 9(1) · Form MBP-1"
+        },
+        {
+          "title": "Place the notice before the Board",
+          "detail": "Include the disclosure in the meeting papers and minute that the Board took note. Match the interests to each contract on the agenda and record any disclosure of a specific interest and resulting participation decision.",
+          "reference": "Section 184(1)–(2) · Board Powers Rule 9(2)"
+        },
+        {
+          "title": "Maintain the disclosure file",
+          "detail": "Keep notices at the registered office for eight years from the end of the relevant financial year, with the company secretary or another Board-authorised custodian. Update the register of contracts where section 189 applies.",
+          "reference": "Board Powers Rule 9(3) · Section 189"
+        }
+      ],
+      "guides": [
+        "archive-statutory-registers"
+      ]
+    },
+    {
+      "id": "director-resignation",
+      "title": "Process a director’s resignation",
+      "category": "Directors",
+      "summary": "Record receipt, calculate the effective date and report the cessation.",
+      "scope": "Voluntary resignation under section 168. Check separate steps for an independent director, a whole-time executive or a resignation that leaves the company without directors.",
+      "related": [
+        "act-168",
+        "act-170",
+        "rule-directors-15",
+        "rule-directors-16",
+        "lodr-17",
+        "lodr-30"
+      ],
+      "templates": [
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "MCA · DIR-12 webform instruction kit",
+          "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_Form%20No%20DIR%2012.pdf"
+        },
+        {
+          "label": "MCA · DIR-11 webform instruction kit",
+          "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_Form%20No%20DIR%2011.pdf"
+        },
+        {
+          "label": "MCA · File DIR-12 or DIR-11",
+          "url": "https://www.mca.gov.in/content/mca/global/en/mca/e-filing/din-related-forms.html"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Log the resignation notice",
+          "detail": "Record when the company received the written notice. Compare that date with any effective date specified by the director and enter the later date in the register.",
+          "reference": "Section 168(1)–(2)"
+        },
+        {
+          "title": "Note the change and assess board strength",
+          "detail": "Place the resignation before the Board for noting. Recalculate minimum directors, quorum and committee composition, including any applicable listed-company vacancy deadlines.",
+          "reference": "Sections 149, 168 and 174 · LODR Regulation 17"
+        },
+        {
+          "title": "Report the cessation",
+          "detail": "File DIR-12 for the company within 30 days of receipt of notice under rule 15, with the resignation notice and evidence requested for this cessation. The director may separately use DIR-11. Save the submitted form and acknowledgement.",
+          "reference": "Section 168 · Directors Rules 15–16 · MCA DIR-12 and DIR-11 kits"
+        },
+        {
+          "title": "Update the public and statutory records",
+          "detail": "Update the section 170 register, post resignation information on the company website if it has one, and include the resignation in the directors’ report laid at the immediately following general meeting.",
+          "reference": "Sections 168 and 170 · Directors Rule 15"
+        },
+        {
+          "title": "Handle exchange disclosure",
+          "detail": "For a listed entity, classify the cessation under Schedule III and file the prescribed particulars on the applicable clock. Review the additional material required where an independent director resigns.",
+          "reference": "LODR Regulation 30 · Schedule III, Part A"
+        }
+      ],
+      "guides": [
+        "dir12",
+        "dir11",
+        "archive-remove-director"
+      ]
+    },
+    {
+      "id": "registered-office",
+      "title": "Move the registered office within local limits",
+      "category": "ROC filings",
+      "summary": "Document a local move, prepare the address evidence and file INC-22.",
+      "scope": "Existing company moving within the local limits of the same city, town or village, under the same Registrar and in the same State. A move outside these boundaries requires a separate approvals analysis.",
+      "related": [
+        "act-12",
+        "rule-incorporation-25",
+        "rule-incorporation-27"
+      ],
+      "templates": [
+        "board-notice",
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · Section 12 on the registered office",
+          "url": "https://e-book.icsi.edu/Actpagedisplay.aspx?PAGENAME=17391"
+        },
+        {
+          "label": "MCA · V3 company webform FAQs",
+          "url": "https://www.mca.gov.in/Ministry/pdf/46_forms_FAQs_07_Feb_2022_reviwed_by_MCA.pdf"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Confirm the route and effective date",
+          "detail": "Compare the existing and proposed addresses, municipal limits and Registrar jurisdiction. Keep the premises details and internal approval with the proposed date on which the new office can receive communications.",
+          "reference": "Section 12(1), (4) and (5)"
+        },
+        {
+          "title": "Authorise the move",
+          "detail": "Place the address and effective date before the Board. Record authority to sign and submit INC-22, arrange the premises and update the company’s communications.",
+          "reference": "Section 12 · Articles and Board authority"
+        },
+        {
+          "title": "Assemble the address evidence",
+          "detail": "Collect the appropriate ownership, lease or authorisation evidence and a utility bill for the premises no older than two months. Check rent receipts, proof of permission and location coordinates against the applicable case in the webform.",
+          "reference": "Incorporation Rules 25 and 27 · MCA INC-22"
+        },
+        {
+          "title": "File INC-22",
+          "detail": "Submit the notice to the Registrar within 30 days of the change. Reconcile the new address, date and coordinates with the evidence. Save the SRN, fee acknowledgement and final status.",
+          "reference": "Section 12(4) · Incorporation Rule 27"
+        },
+        {
+          "title": "Update signage and correspondence",
+          "detail": "Arrange delivery of official correspondence, update nameboards, letterheads, notices and website contact details, and verify the new address in MCA master data after processing.",
+          "reference": "Section 12(1) and (3)"
+        }
+      ],
+      "guides": [
+        "v3",
+        "archive-registered-office"
+      ]
+    },
+    {
+      "id": "file-mgt-14",
+      "title": "File a resolution in MGT-14",
+      "category": "ROC filings",
+      "summary": "Classify the resolution, prepare the certified record and verify the filing.",
+      "scope": "Resolutions and agreements covered by section 117(3). Check the company class, transaction-specific provision and applicable exemption before opening a filing.",
+      "related": [
+        "act-117",
+        "act-179",
+        "act-102",
+        "rule-management-24"
+      ],
+      "templates": [
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "MCA · MGT-14 webform instruction kit",
+          "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_MGT-14.pdf"
+        },
+        {
+          "label": "MCA · Conditions for private company exemptions",
+          "url": "https://www.mca.gov.in/Ministry/pdf/ExemptionPrivateCompanies.pdf"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Identify the filing provision",
+          "detail": "Read the operative resolution or agreement against section 117(3). Record the clause relied on. For a Board resolution under section 179(3), test section 117(3)(g), any company-class exemption and its conditions.",
+          "reference": "Sections 117(3) and 179(3) · MCA exemption notifications"
+        },
+        {
+          "title": "Calculate the due date",
+          "detail": "Count 30 days from passing the resolution or making the agreement. Record the actual meeting or agreement date and allocate a signatory and a reviewer.",
+          "reference": "Section 117(1)"
+        },
+        {
+          "title": "Prepare the filing set",
+          "detail": "Obtain the certified resolution or agreement and any explanatory statement annexed to the notice. Add the altered constitutional documents or linked forms when the transaction and portal require them.",
+          "reference": "Section 117(1) · Management and Administration Rule 24 · MCA MGT-14 kit"
+        },
+        {
+          "title": "Complete and reconcile the form",
+          "detail": "Enter CIN, purpose, date and resolution particulars. Compare the final text and attachment set with the signed decision, confirm signing authority, then submit the webform and pay the applicable fee.",
+          "reference": "Management and Administration Rule 24 · MCA MGT-14 kit"
+        },
+        {
+          "title": "Record the outcome",
+          "detail": "Save the submitted form, acknowledgement and SRN. Check status or a resubmission request and carry the SRN into any dependent filing.",
+          "reference": "MCA MGT-14 kit"
+        }
+      ],
+      "guides": [
+        "mgt14"
+      ]
+    },
+    {
+      "id": "annual-general-meeting",
+      "title": "Conduct an annual general meeting",
+      "category": "Member meetings",
+      "summary": "Set the AGM timetable, issue notice, record voting and identify follow-on filings.",
+      "scope": "Ordinary AGM of a company required to hold one. Check special company regimes, class notifications and any current MCA circular governing electronic meetings or filing extensions.",
+      "related": [
+        "act-96",
+        "act-101",
+        "act-102",
+        "act-103",
+        "act-105",
+        "act-108",
+        "act-118",
+        "act-121",
+        "lodr-44"
+      ],
+      "templates": [
+        "mgt-11"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · Section 96 on the AGM",
+          "url": "https://e-book.icsi.edu/Actpagedisplay.aspx?PAGENAME=17479"
+        },
+        {
+          "label": "ICSI · SS-2 on general meetings",
+          "url": "https://www.icsi.edu/media/webmodules/SS-2_1_2024.pdf"
+        },
+        {
+          "label": "MCA · Filing circulars and extensions",
+          "url": "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/circulars.html"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Determine the meeting window",
+          "detail": "For the first AGM, test nine months from the end of the first financial year. For a later AGM, check six months from year-end and the 15-month interval. Consider a granted Registrar extension and any shorter listed-entity deadline.",
+          "reference": "Section 96 · LODR Regulation 44(5)"
+        },
+        {
+          "title": "Approve the meeting papers",
+          "detail": "Set the date, venue or permitted electronic mode, business and voting arrangements. Obtain the approved financial statements, reports, proposed resolutions and explanatory statements for special business.",
+          "reference": "Sections 96, 102, 129 and 134 · SS-2"
+        },
+        {
+          "title": "Issue the notice",
+          "detail": "Ordinarily allow 21 clear days. Check the articles and any applicable class exemption. If using shorter notice for the AGM, obtain the required consent from at least 95% of members entitled to vote, and separately test circulation of financial statements.",
+          "reference": "Sections 101 and 136 · SS-2"
+        },
+        {
+          "title": "Arrange voting and representation",
+          "detail": "Check member entitlement, proxies or corporate representatives as applicable to the meeting mode, quorum, e-voting and scrutiniser arrangements. For an eligible physical meeting, supply the prescribed proxy form where required.",
+          "reference": "Sections 103, 105, 108 and 113 · LODR Regulation 44"
+        },
+        {
+          "title": "Document proceedings and results",
+          "detail": "Record the chair, quorum, business, voting and declared results. Enter minutes within 30 days. For listed entities, check exchange reporting of proceedings and voting results on their respective clocks.",
+          "reference": "Section 118 · SS-2 · LODR Regulations 30 and 44"
+        },
+        {
+          "title": "Calendar the filings",
+          "detail": "Identify resolutions requiring MGT-14. If the company is a listed public company, assess the AGM report under section 121 and MGT-15. For annual accounts and the annual return, select the applicable forms, statutory dates and current circulars.",
+          "reference": "Sections 92, 117, 121 and 137 · MCA filing circulars"
+        }
+      ],
+      "guides": [
+        "ss2",
+        "mca-circulars",
+        "archive-agm",
+        "archive-annual-filing"
+      ]
+    },
+    {
+      "id": "circular-resolution",
+      "title": "Pass a Board resolution by circulation",
+      "category": "Board governance",
+      "summary": "Decide whether circulation is available, collect directors’ responses and record the result.",
+      "scope": "Board or committee business eligible for circulation. Check the Act, Rules, articles and matters reserved for a meeting before selecting this procedure.",
+      "related": [
+        "act-175",
+        "act-179",
+        "act-118",
+        "rule-board-5"
+      ],
+      "templates": [
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · SS-1 on Board meetings",
+          "url": "https://www.icsi.edu/media/webmodules/Final_SS-1.pdf"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Classify the item",
+          "detail": "Check whether the decision must be taken at a meeting, including matters reserved under section 179(3), the Rules and SS-1. Have the authorised person decide to proceed by circulation.",
+          "reference": "Sections 175 and 179(3) · SS-1, paragraph 6 and Annexure A"
+        },
+        {
+          "title": "Circulate to every director",
+          "detail": "Send the proposed resolution, explanation, supporting papers and voting instructions to all Board or committee members, including interested directors. Identify ineligible voters and keep dispatch evidence.",
+          "reference": "Section 175(1) · SS-1, paragraph 6.2"
+        },
+        {
+          "title": "Track votes and meeting requests",
+          "detail": "Specify the response period under SS-1, normally no more than seven days plus any applicable postal service time. If at least one-third of the total directors require a Board meeting, refer the matter to a meeting.",
+          "reference": "Section 175(1) proviso · SS-1, paragraphs 6.2–6.3"
+        },
+        {
+          "title": "Record the decision",
+          "detail": "Verify a majority of directors entitled to vote, account for any higher threshold and determine the passing date under SS-1. Retain the replies, including dissents. At the next Board or committee meeting, note the resolution and enter it in the minutes.",
+          "reference": "Section 175(1)–(2) · SS-1, paragraphs 6.3–6.4"
+        }
+      ],
+      "guides": [
+        "ss1"
+      ]
+    },
+    {
+      "id": "material-event",
+      "title": "Disclose a material event to the exchanges",
+      "category": "Listed companies",
+      "summary": "Classify a Schedule III event, set the reporting time and retain the exchange evidence.",
+      "scope": "Listed entities to which Regulation 30 applies. Debt-only listings have a separate event-reporting framework, including Regulation 51 and the applicable part of Schedule III.",
+      "related": [
+        "lodr-30",
+        "lodr-SIII",
+        "lodr-46",
+        "lodr-51"
+      ],
+      "templates": [],
+      "sources": [
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        },
+        {
+          "label": "SEBI · Listed entities master circular, 30 January 2026",
+          "url": "https://www.sebi.gov.in/legal/master-circulars/jan-2026/master-circular-for-compliance-with-the-provisions-of-the-securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-by-listed-entities_99432.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Capture the trigger",
+          "detail": "Log the event, how it came to the entity’s attention, occurrence time, responsible business owner and any Board decision time. Notify the KMP authorised to assess materiality and make disclosures.",
+          "reference": "LODR Regulation 30(5)–(6)"
+        },
+        {
+          "title": "Classify the event",
+          "detail": "Check Part A of Schedule III. Paragraph A identifies deemed-material items, while paragraph B calls for a documented materiality assessment. Check subsidiary events and any event-specific disclosure particulars.",
+          "reference": "LODR Regulation 30(2)–(4), (9) · Schedule III, Part A"
+        },
+        {
+          "title": "Set the applicable clock",
+          "detail": "Check the event-specific timeline first. Under the general rule, distinguish Board decisions from events originating inside the entity (12 hours) and outside it (24 hours). For Board decisions, check the 30-minute rule and after-hours proviso against the actual closing time.",
+          "reference": "LODR Regulation 30(6) · Schedule III, Part A"
+        },
+        {
+          "title": "Submit and retain the acknowledgement",
+          "detail": "Use the exchange announcement format and applicable SEBI particulars. Disclose as soon as reasonably possible. If late, include the reason. Retain the announcement, timestamps and acknowledgements from each relevant exchange.",
+          "reference": "LODR Regulation 30(6) · SEBI master circular"
+        },
+        {
+          "title": "Publish and follow up",
+          "detail": "Publish the disclosure on the company website and retain it there for at least five years, then follow the archival policy. Track material developments through the event’s resolution or closure.",
+          "reference": "LODR Regulation 30(7)–(8)"
+        }
+      ],
+      "guides": [
+        "sebi-circular"
+      ]
+    },
+    {
+      "id": "related-party",
+      "title": "Review and approve a related party transaction",
+      "category": "Listed companies",
+      "summary": "Test the relationship, document pricing and obtain approvals before contracting.",
+      "scope": "Indian companies considering a contract with a related party. Apply the SEBI layer only where the relevant listing provisions govern the entity or its subsidiary.",
+      "related": [
+        "act-177",
+        "act-184",
+        "act-188",
+        "act-189",
+        "rule-board-15",
+        "lodr-23"
+      ],
+      "templates": [
+        "mbp-1",
+        "board-notice",
+        "resolution-extract"
+      ],
+      "sources": [
+        {
+          "label": "India Code · Companies Act, 2013",
+          "url": "https://www.indiacode.nic.in/bitstream/123456789/2114/5/A2013-18.pdf"
+        },
+        {
+          "label": "ICSI · Section 188 on related party transactions",
+          "url": "https://e-book.icsi.edu/Actpagedisplay.aspx?PAGENAME=17582"
+        },
+        {
+          "label": "SEBI · LODR Regulations, 15 October 2026 edition",
+          "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-october-15-2026-_105365.html"
+        },
+        {
+          "label": "SEBI · Listed entities master circular, 30 January 2026",
+          "url": "https://www.sebi.gov.in/legal/master-circulars/jan-2026/master-circular-for-compliance-with-the-provisions-of-the-securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-by-listed-entities_99432.html"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Identify the parties and transaction",
+          "detail": "Map ownership, control, directorships and relationships against the Companies Act and applicable LODR definitions. Identify which group entity is entering the contract, its value, duration and earlier transactions with the party.",
+          "reference": "Section 2(76) · LODR Regulation 2(1)(zb)–(zc)"
+        },
+        {
+          "title": "Document the statutory tests",
+          "detail": "Identify the relevant section 188 category. Keep separate evidence of ordinary course of business and arm’s-length pricing. Assess section 177 committee approval independently and calculate rule 15 thresholds using the prescribed financial base.",
+          "reference": "Sections 177(4)(iv) and 188(1) · Board Powers Rule 15"
+        },
+        {
+          "title": "Complete the listed-company analysis",
+          "detail": "Where Regulation 23 applies, assess the listed entity and subsidiary tests, current materiality thresholds, specific exceptions and modifications. Determine whether independent audit committee members and shareholders must approve in advance.",
+          "reference": "LODR Regulation 23 · Schedule XII · SEBI master circular"
+        },
+        {
+          "title": "Prepare and obtain the approvals",
+          "detail": "Set out the relationship, valuation, commercial rationale, amount and material terms in the papers. Obtain each applicable prior approval, identify voting restrictions and record interested directors’ participation or abstention.",
+          "reference": "Sections 177, 184 and 188 · Board Powers Rule 15 · LODR Regulation 23"
+        },
+        {
+          "title": "Update records and monitor changes",
+          "detail": "Complete the statutory register and Board’s report disclosures where required. Calendar periodic listed-entity disclosures, compare actual usage with the approval and refer material changes for review before implementation.",
+          "reference": "Sections 188(2) and 189 · LODR Regulation 23(2), (4) and (9)"
+        }
+      ],
+      "guides": [
+        "sebi-circular",
+        "archive-related-party"
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "id": "lawrbit-directory",
+      "title": "Lawrbit procedures directory",
+      "category": "Lawrbit",
+      "url": "https://www.lawrbit.com/procedures/",
+      "kind": "external"
+    },
+    {
+      "id": "ss1",
+      "title": "SS-1 on Board meetings",
+      "category": "ICSI",
+      "url": "https://www.icsi.edu/media/webmodules/Final_SS-1.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "ss2",
+      "title": "SS-2 on general meetings",
+      "category": "ICSI",
+      "url": "https://www.icsi.edu/media/webmodules/SS-2_1_2024.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "dir12",
+      "title": "DIR-12 webform instruction kit",
+      "category": "MCA",
+      "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_Form%20No%20DIR%2012.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "dir11",
+      "title": "DIR-11 webform instruction kit",
+      "category": "MCA",
+      "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_Form%20No%20DIR%2011.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "mgt14",
+      "title": "MGT-14 webform instruction kit",
+      "category": "MCA",
+      "url": "https://www.mca.gov.in/content/dam/mca/mca-forms-instruction-kit/Instruction%20Kit_MGT-14.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "v3",
+      "title": "V3 company webform FAQs",
+      "category": "MCA",
+      "url": "https://www.mca.gov.in/Ministry/pdf/46_forms_FAQs_07_Feb_2022_reviwed_by_MCA.pdf",
+      "kind": "external"
+    },
+    {
+      "id": "sebi-circular",
+      "title": "Listed entities master circular, 30 January 2026",
+      "category": "SEBI",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jan-2026/master-circular-for-compliance-with-the-provisions-of-the-securities-and-exchange-board-of-india-listing-obligations-and-disclosure-requirements-regulations-2015-by-listed-entities_99432.html",
+      "kind": "external"
+    },
+    {
+      "id": "mca-circulars",
+      "title": "Filing circulars and extensions",
+      "category": "MCA",
+      "url": "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/circulars.html",
+      "kind": "external"
+    },
+    {
+      "id": "archive-incorporation",
+      "title": "Incorporating a company (private limited)",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/incorporation"
+    },
+    {
+      "id": "archive-registered-office",
+      "title": "Shifting the registered office",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/registered-office"
+    },
+    {
+      "id": "archive-agm",
+      "title": "Annual General Meeting",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/agm"
+    },
+    {
+      "id": "archive-board-meeting",
+      "title": "Board meeting",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/board-meeting"
+    },
+    {
+      "id": "archive-committees",
+      "title": "Audit Committee and Nomination and Remuneration Committee meetings",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/committees"
+    },
+    {
+      "id": "archive-egm",
+      "title": "Extraordinary General Meeting",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/egm"
+    },
+    {
+      "id": "archive-appoint-director",
+      "title": "Appointing a director",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/appoint-director"
+    },
+    {
+      "id": "archive-remove-director",
+      "title": "Removal or resignation of a director",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/remove-director"
+    },
+    {
+      "id": "archive-remuneration",
+      "title": "Director remuneration and Managing Director appointment",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/remuneration"
+    },
+    {
+      "id": "archive-appoint-auditor",
+      "title": "Appointing a statutory auditor",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/appoint-auditor"
+    },
+    {
+      "id": "archive-allotment",
+      "title": "Allotting shares",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/allotment"
+    },
+    {
+      "id": "archive-bonus-split",
+      "title": "Bonus shares, stock split and buy-back",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/bonus-split"
+    },
+    {
+      "id": "archive-esop",
+      "title": "ESOP and sweat equity",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/esop"
+    },
+    {
+      "id": "archive-dividend",
+      "title": "Declaring and paying a dividend",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/dividend"
+    },
+    {
+      "id": "archive-borrowing",
+      "title": "Borrowing, loans, investments and deposits",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/borrowing"
+    },
+    {
+      "id": "archive-charge",
+      "title": "Creating and satisfying a charge",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/charge"
+    },
+    {
+      "id": "archive-annual-filing",
+      "title": "Yearly filings after the AGM",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/annual-filing"
+    },
+    {
+      "id": "archive-change-name",
+      "title": "Changing the company's name",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/change-name"
+    },
+    {
+      "id": "archive-alter-moa-aoa",
+      "title": "Altering the Memorandum or Articles; changing the type of company",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/alter-moa-aoa"
+    },
+    {
+      "id": "archive-authorised-capital",
+      "title": "Increasing authorised capital",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/authorised-capital"
+    },
+    {
+      "id": "archive-related-party",
+      "title": "Related party transactions",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/related-party"
+    },
+    {
+      "id": "archive-restructuring",
+      "title": "Merger, sale and lease of an undertaking, spin-off",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/restructuring"
+    },
+    {
+      "id": "archive-strike-off",
+      "title": "Striking off a company's name",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/strike-off"
+    },
+    {
+      "id": "archive-capital-reduction",
+      "title": "Reduction of share capital",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/capital-reduction"
+    },
+    {
+      "id": "archive-debentures",
+      "title": "Issuing debentures and appointing a debenture trustee",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/debentures"
+    },
+    {
+      "id": "archive-postal-ballot",
+      "title": "Postal ballot",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/postal-ballot"
+    },
+    {
+      "id": "archive-winding-up",
+      "title": "Winding up",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/winding-up"
+    },
+    {
+      "id": "archive-change-financial-year",
+      "title": "Changing the financial year",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/change-financial-year"
+    },
+    {
+      "id": "archive-csr",
+      "title": "Corporate social responsibility (CSR) compliance",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/csr"
+    },
+    {
+      "id": "archive-secretarial-audit",
+      "title": "Secretarial audit and annual secretarial compliance",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/secretarial-audit"
+    },
+    {
+      "id": "archive-statutory-registers",
+      "title": "Maintaining statutory registers and records",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/statutory-registers"
+    },
+    {
+      "id": "archive-share-transfer",
+      "title": "Share transfer, transmission and duplicate certificates",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/share-transfer"
+    },
+    {
+      "id": "archive-independent-director",
+      "title": "Appointing an independent director",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/independent-director"
+    },
+    {
+      "id": "archive-dormant-company",
+      "title": "Dormant company status",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/dormant-company"
+    },
+    {
+      "id": "archive-beneficial-owners",
+      "title": "Significant beneficial owners",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/beneficial-owners"
+    },
+    {
+      "id": "archive-book-closure",
+      "title": "Closing the register or fixing a record date",
+      "category": "Compliance-Lab handbook",
+      "kind": "archive",
+      "url": "reference.html#/processes/book-closure"
+    }
+  ]
+}

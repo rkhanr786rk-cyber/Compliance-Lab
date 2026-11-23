@@ -659,6 +659,7 @@ body{background:var(--paper)}
     </div>
     <button class="menubtn" id="menubtn" aria-expanded="false" aria-controls="mainnav">Menu</button>
     <nav class="nav" id="mainnav" aria-label="Main sections">
+      <a class="gb" href="./">Practice desk</a>
       <div class="grp"><button type="button" class="gb" aria-expanded="false" aria-haspopup="true">Law</button><div class="menu">
         <a href="#/act" data-nav="act"><b>Companies Act, 2013</b><span>Sections with the Rules beside them</span></a>
         <a href="#/lodr" data-nav="lodr" id="nav-lodr" hidden><b>SEBI LODR, 2015</b><span>Regulations and schedules</span></a>
@@ -1335,7 +1336,7 @@ document.addEventListener("click", async e => {
   else if (act === "word") {
     const ind = { sub: 0, p: 0, cl: 24, sc: 48 };
     const body = d.paras.map(p => { const m = ind[p.k] === undefined ? 12 : ind[p.k]; return `<p style="margin:0 0 6pt ${m}pt;text-align:justify">${p.l ? `<b>${esc(p.l)}</b>&nbsp;&nbsp;` : ""}${esc(p.x)}</p>`; }).join("");
-    const doc = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Section ${esc(d.n)}</title><style>body{font-family:"Times New Roman",serif;font-size:12pt;line-height:1.4}h1{font-size:15pt;margin:0 0 4pt}.src{font-size:10pt;color:#555;margin-top:14pt}</style></head><body><h1>${esc(d.n)}. ${esc(d.t)}</h1>${d.c ? `<p class="src">Chapter ${esc(d.c)}${d.ct ? ", " + esc(nice(d.ct)) : ""}</p>` : ""}${body}<p class="src">Source: Companies Act, 2013, section ${esc(d.n)}. Check the wording against the official text before you rely on it.</p></body></html>`;
+    const doc = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Section ${esc(d.n)}</title><style>body{font-family:"Times New Roman",serif;font-size:12pt;line-height:1.4}h1{font-size:15pt;margin:0 0 4pt}.src{font-size:10pt;color:#555;margin-top:14pt}</style></head><body><h1>${esc(d.n)}. ${esc(d.t)}</h1>${d.c ? `<p class="src">Chapter ${esc(d.c)}${d.ct ? ", " + esc(nice(d.ct)) : ""}</p>` : ""}${body}<p class="src">Source: Companies Act, 2013, section ${esc(d.n)}. Check the wording against the official text before you rely on it.</p><\/body><\/html>`;
     const url = URL.createObjectURL(new Blob(["\ufeff", doc], { type: "application/msword" }));
     const a = document.createElement("a"); a.href = url; a.download = `Companies Act 2013 - Section ${d.n}.doc`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
     toast("Word file downloaded");
@@ -1423,7 +1424,7 @@ async function packRun(kind) {
   if (kind === "word") {
     const css = `body{font-family:"Times New Roman",serif;font-size:12pt;line-height:1.4}h1{font-size:22pt}h2{font-size:16pt;page-break-before:always;border-top:1.5pt solid #000;padding-top:6pt}h2.first{page-break-before:avoid}h3{font-size:12pt;font-family:Arial,sans-serif}h4{font-size:12pt;margin-bottom:2pt}.sub{color:#555;font-family:Arial,sans-serif;font-size:10pt}p{margin:0 0 6pt}.pk-clause{margin-left:28pt}.pk-subclause{margin-left:56pt}.pk-proviso,.pk-expl{margin-left:28pt;font-size:11pt}.pk-note{border-left:3pt solid #1d4f91;padding-left:8pt;font-family:Arial,sans-serif;font-size:10.5pt}`;
     const doc = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(pk.title)}</title><style>${css}
-</style></head><body>${pk.html}</body></html>`;
+</style></head><body>${pk.html}<\/body><\/html>`;
     const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff", doc], { type: "application/msword" }));
     a.download = pk.title.replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 80) + ".doc"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     toast("Word file downloaded");

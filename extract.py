@@ -7,7 +7,7 @@ from pathlib import Path
 import fitz  # PyMuPDF
 
 OUT = Path("data/raw")
-SKIP = {"data", ".git", ".github", "node_modules"}
+SKIP = {"data", "site", ".git", ".github", "node_modules"}
 
 
 def category(pdf: Path) -> str:
