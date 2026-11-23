@@ -1471,7 +1471,7 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 def shell(title, desc, active, body, script=""):
     groups = [("Law", [("../#/act", "Companies Act, 2013", ""), ("../#/lodr", "SEBI LODR, 2015", ""), ("../#/cases", "Case laws", "")]),
               ("Practice", [("../#/forms", "Forms and checklists", ""), ("../#/processes", "Processes", ""), ("../#/resolutions", "Model resolutions", ""), ("../drafts/", "Drafts library", "")]),
-              ("Tools", [("../generators/", "Document generators", "gen"), ("../excel/", "Excel utilities", "xl"), ("../calendar/", "Compliance calendar", "cal"), ("../stamp/", "Stamp duty", "stamp"), ("../#/tools", "Calculator", ""), ("../#/me", "My workspace", "")])]
+              ("Tools", [("../generators/", "Document generators", "gen"), ("../excel/", "Excel utilities", "xl"), ("../calendar/", "Compliance calendar", "cal"), ("../stamp/", "Stamp duty", "stamp"), ("../#/tools", "Calculator", ""), ("../#/me", "My workspace", ""), ("../sources/", "Sources and checks", "src")])]
     cur = ' aria-current="page"'
     links = '<a href="../">Home</a>'
     for gn, items in groups:
@@ -1742,12 +1742,36 @@ STAMP_CSS = r"""
 """
 
 
+def build_sources():
+    out = SITE / "sources"
+    out.mkdir(parents=True, exist_ok=True)
+    rows = [
+        ("Companies Act, 2013 and the Rules", "The text is read from the Act and Rules PDFs kept in the repository. The date of the last build is shown at the foot of the home page.", "Check the wording against the official gazette or India Code before you advise on it. Amendments after the PDF date are not in the text."),
+        ("SEBI (LODR) Regulations, 2015", "Read from the Regulations PDF kept in the repository.", "SEBI amends these often. Check the current text on the SEBI website."),
+        ("Case laws", "Summaries are written in simple words for study. The notes are not part of the judgment.", "Read the full judgment before you cite a case."),
+        ("Statutory registers (Excel)", "The headings of Forms MGT-1, MGT-2, MBP-2, MBP-3 and MBP-4 (Part A) were checked against the text of the Rules on 21 November 2026. Forms SH-2, SH-3, SH-6, SH-10, CHG-7 and BEN-3 follow published copies of the forms.", "Compare SH-2, SH-3, SH-6, SH-10, CHG-7 and BEN-3 with the official form before you rely on them. MBP-4 Part B is not built separately; use the Register of directors' disclosures of interest. The registers for allotments, transfers, dividends, deposits, directors' disclosures and directors and KMP have no prescribed layout, so their layout is ours."),
+        ("Document generators (Word)", "Notices, minutes, letters, policies and resolutions are written in our own words on the standard layout.", "Forms MR-3, MGT-12 and MGT-13 follow the standard structure. Compare them with the current MCA form. Fill in every bracket and check the company's Articles."),
+        ("Stamp duty", "The rates come from the MCA e-stamp rate table, read on 20 November 2026.", "The table has no date and some states have amended their Acts since. LLP agreements are not included. SH-7 duty for Gujarat and Madhya Pradesh is not worked out. Confirm with the state stamp office."),
+        ("Compliance calendar and Calculator", "Dates are counted in calendar days from the dates you enter.", "Holidays, extensions and circulars are not applied. Check the due date on the MCA portal."),
+        ("Other Excel workbooks", "Depreciation uses the useful lives in Schedule II. The ratios follow Schedule III. The formulas were tested with sample numbers.", "Check the useful lives, the ratio definitions and the company's own policy before you sign off."),
+    ]
+    tr = "".join("<tr><td><b>%s</b></td><td>%s</td><td>%s</td></tr>" % r for r in rows)
+    body = f"""<h1>Sources and checks</h1>
+<p class="lede">What each part of the site is based on, and what to check before you rely on it. The site is for study and for starting drafts. It is not legal advice.</p>
+<div class="tw"><table class="tbl"><thead><tr><th>Part of the site</th><th>What it is based on</th><th>Check this before you rely on it</th></tr></thead><tbody>{tr}</tbody></table></div>
+<p class="small">Found a mistake or an out-of-date item? Note the page and the item and tell the person who maintains the site, so that it can be corrected on the next build.</p>"""
+    html = shell("Sources and checks | Compliance Lab", "What each part of the site is based on and what to verify before you rely on it.", "src", body, "")
+    (out / "index.html").write_text(html, encoding="utf-8")
+    print("Sources page written")
+
+
 def build_stamp():
     out = SITE / "stamp"
     out.mkdir(parents=True, exist_ok=True)
     units = '<option value="1">Rs.</option><option value="100000" selected>Lakh</option><option value="10000000">Crore</option>'
     body = f"""<h1>Stamp duty on company incorporation and capital increase</h1>
 <p class="lede">Pick the state, say whether you are incorporating a company or increasing its authorised capital, and enter the amount. The page works out the stamp duty on the form, the Memorandum and the Articles, or on Form SH-7.</p>
+<p class="small"><b>Rates last checked: 20 November 2026</b>, against the MCA e-stamp rate table. The table itself carries no date, so confirm the rate with your state before you pay.</p>
 <div class="cols"><form class="form" id="f" onsubmit="return false" autocomplete="off"><h2>What you need</h2>
 <div class="fld"><label for="st">State or Union Territory (of the registered office)</label><select id="st"></select></div>
 <div class="fld"><label for="mode">What for</label><select id="mode"><option value="inc0">Incorporation: MoA and AoA</option><option value="inc">Increase in authorised capital: Form SH-7</option></select></div>
@@ -3047,7 +3071,7 @@ sel.onchange=function(){show(sel.value);history.replaceState(null,"",sel.value?"
 
 
 if __name__ == "__main__":
-    for step in (build_generators, build_calendar, build_stamp, build_excel):
+    for step in (build_generators, build_calendar, build_stamp, build_sources, build_excel):
         try:
             step()
         except Exception as e:
