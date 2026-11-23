@@ -52,6 +52,9 @@ button{font:inherit;color:inherit}
 .field input::placeholder{color:var(--muted)}
 .results{position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:40;background:var(--page);border:1px solid var(--rule);border-radius:3px;box-shadow:0 16px 36px -14px rgba(8,16,30,.45);max-height:min(70vh,34rem);overflow:auto;text-align:left}
 .results h4{margin:0;padding:.6rem .95rem .2rem;font:500 .82rem var(--sans);color:var(--muted)}
+.showall{display:block;width:100%;text-align:left;background:none;border:0;padding:.3rem .95rem .5rem;font:600 .85rem var(--sans);color:var(--link);cursor:pointer}
+.showall:hover{text-decoration:underline}
+.hc i:empty{display:none}
 .res{display:flex;gap:.85rem;align-items:baseline;padding:.55rem .95rem;color:inherit;text-decoration:none}
 .res[aria-selected=true],.res:hover{background:color-mix(in srgb,var(--link) 11%,transparent)}
 .res b{flex:0 0 3.6rem;font:600 1.05rem var(--serif);color:var(--tape);white-space:nowrap}
@@ -661,7 +664,8 @@ body{background:var(--paper)}
         <a href="calendar/" data-nav="cal"><b>Compliance calendar</b><span>Due dates and a calendar file</span></a>
         <a href="stamp/" data-nav="stamp"><b>Stamp duty</b><span>MoA, AoA and capital increase</span></a>
         <a href="#/tools" data-nav="tools"><b>Calculator</b><span>Notice periods and due dates</span></a>
-        <a href="#/me" data-nav="me"><b>My workspace</b><span>Saved sections and notes</span></a></div></div>
+        <a href="#/me" data-nav="me"><b>My workspace</b><span>Saved sections and notes</span></a>
+        <a href="sources/" data-nav="src"><b>Sources and checks</b><span>What to verify before you rely on a tool</span></a></div></div>
     </nav>
     <div class="tools" role="group" aria-label="Reading settings">
       <button data-fs="-1" aria-label="Smaller text" title="Smaller text">A−</button>
@@ -677,7 +681,7 @@ body{background:var(--paper)}
 <main id="view"><p class="msg">Loading the Act…</p></main>
 
 <footer class="foot" id="foot" hidden>
-  <p><a href="drafts/">Drafts library</a>: ready drafts in their original wording.</p>
+  <p><a href="drafts/">Drafts library</a>: ready drafts in their original wording. <a href="sources/">Sources and checks</a>: what to verify before you rely on a tool.</p>
   <p>For study only. This is not legal advice. Check the wording against the official gazette or India Code before relying on it.</p>
   <p id="built"></p>
 </footer>
@@ -774,19 +778,22 @@ async function otherSearch(q) {
   const grp = (label, items) => { if (items.length) out.push({ label, items }); };
   if (S.idx.lodr) { const X = await ld("lodrX", "data/lodr/index.json"); if (X) {
     const ref = parseRef(q);
-    grp("SEBI LODR", X.filter(e => (ref && e.id.toLowerCase() === ref.n.toLowerCase()) || all((e.id + " " + e.t).toLowerCase())).slice(0, 4).map(e => item(`#/lodr/${e.id}`, e.k === "s" ? "Sch " + e.id.slice(1) : "Reg " + e.id, e.t, (e.id.replace(/^S/, "Schedule ")) + ", SEBI (LODR) Regulations"))); } }
+    grp("SEBI LODR", X.filter(e => (ref && e.id.toLowerCase() === ref.n.toLowerCase()) || all((e.id + " " + e.t).toLowerCase())).slice(0, 12).map(e => item(`#/lodr/${e.id}`, e.k === "s" ? "Sch " + e.id.slice(1) : "Reg " + e.id, e.t, (e.id.replace(/^S/, "Schedule ")) + ", SEBI (LODR) Regulations"))); } }
   if (S.idx.cl) { const X = await ld("clX", "data/cl/index.json"); if (X) {
     const cs = X.topics.flatMap(t => t.cases);
-    grp("Case laws", cs.filter(c => all((c.t + " " + c.cit + " " + c.court).toLowerCase())).slice(0, 4).map(c => item(`#/cases/${c.id}`, "Case", c.t, `${c.cit}, ${c.court}`))); } }
-  { const F = await ld("formsX", "data/forms.json"); if (F) grp("Forms", Object.keys(F).filter(f => all((f + " " + F[f].r.map(r => r[2]).join(" ")).toLowerCase())).slice(0, 4).map(f => item(`#/forms?f=${encodeURIComponent(f)}`, f, F[f].r[0] ? F[f].r[0][2] : "Form", "Filing process and checklist"))); }
-  { const P = await getProcs(); if (P) grp("Processes", P.filter(x => all((x.title + " " + x.summary).toLowerCase())).slice(0, 4).map(x => item(`#/processes/${x.id}`, "Process", x.title, x.summary))); }
-  if (S.idx.res) { const X = await ld("resX", "data/res/index.json"); if (X) grp("Model resolutions", X.items.filter(i => all((i.t + " " + i.m + " " + i.g).toLowerCase())).slice(0, 4).map(i => item(`#/resolutions/${i.id}`, "Res.", i.t, i.m))); }
+    grp("Case laws", cs.filter(c => all((c.t + " " + c.cit + " " + c.court).toLowerCase())).slice(0, 12).map(c => item(`#/cases/${c.id}`, "Case", c.t, `${c.cit}, ${c.court}`))); } }
+  { const F = await ld("formsX", "data/forms.json"); if (F) grp("Forms", Object.keys(F).filter(f => all((f + " " + F[f].r.map(r => r[2]).join(" ")).toLowerCase())).slice(0, 12).map(f => item(`#/forms?f=${encodeURIComponent(f)}`, f, F[f].r[0] ? F[f].r[0][2] : "Form", "Filing process and checklist"))); }
+  { const P = await getProcs(); if (P) grp("Processes", P.filter(x => all((x.title + " " + x.summary).toLowerCase())).slice(0, 12).map(x => item(`#/processes/${x.id}`, "Process", x.title, x.summary))); }
+  if (S.idx.res) { const X = await ld("resX", "data/res/index.json"); if (X) grp("Model resolutions", X.items.filter(i => all((i.t + " " + i.m + " " + i.g).toLowerCase())).slice(0, 12).map(i => item(`#/resolutions/${i.id}`, "Res.", i.t, i.m))); }
   return out;
 }
 function mountSearch(input, box) {
-  let items = [], sel = -1, timer = 0, seq = 0;
+  let sel = -1, timer = 0, seq = 0, exact = false;
+  const SHOW = 3;
+  const vis = () => $$(".res", box).filter(a => !a.closest(".moreres[hidden]"));
   const close = () => { box.hidden = true; sel = -1; input.setAttribute("aria-expanded", "false"); };
-  const mark = () => $$(".res", box).forEach((a, i) => a.setAttribute("aria-selected", String(i === sel)));
+  const mark = () => { const v = vis(); $$(".res", box).forEach(a => a.setAttribute("aria-selected", "false")); if (v[sel]) v[sel].setAttribute("aria-selected", "true"); };
+  const grp = (label, its) => `<h4>${esc(label)}</h4>` + its.slice(0, SHOW).map(x => x.html).join("") + (its.length > SHOW ? `<div class="moreres" hidden>${its.slice(SHOW).map(x => x.html).join("")}</div><button type="button" class="showall">Show all ${its.length}</button>` : "");
   const run = async () => {
     const q = input.value, my = ++seq;
     if (!q.trim()) return close();
@@ -794,11 +801,10 @@ function mountSearch(input, box) {
     if (my !== seq) return;
     let more = []; try { more = await otherSearch(q); } catch (e) { more = []; }
     if (my !== seq) return;
-    items = [...r.sections, ...r.rules, ...more.flatMap(g => g.items)];
     let h = "";
-    if (r.sections.length) h += `<h4>Companies Act sections</h4>` + r.sections.map(x => x.html).join("");
-    if (r.rules.length) h += `<h4>Rules</h4>` + r.rules.map(x => x.html).join("");
-    more.forEach(g => { h += `<h4>${esc(g.label)}</h4>` + g.items.map(x => x.html).join(""); });
+    if (r.sections.length) h += grp("Companies Act sections", r.sections);
+    if (r.rules.length) h += grp("Rules", r.rules);
+    more.forEach(g => { h += grp(g.label, g.items); });
     if (!h) h = parseRef(q) ? `<div class="none">The Act has no section ${esc(q.trim())}. Sections run from 1 to ${esc(S.order[S.order.length - 1])}.</div>`
                             : `<div class="none">Nothing found for “${esc(q.trim())}”. Try fewer or simpler words.</div>`;
     box.innerHTML = h; box.hidden = false; input.setAttribute("aria-expanded", "true"); sel = r.exact ? 0 : -1; mark();
@@ -807,11 +813,19 @@ function mountSearch(input, box) {
   input.addEventListener("focus", () => { if (input.value) run(); });
   input.addEventListener("blur", () => setTimeout(close, 160));
   input.addEventListener("keydown", e => {
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); if (!items.length) return; sel = (sel + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length; mark(); $$(".res", box)[sel].scrollIntoView({ block: "nearest" }); }
-    else if (e.key === "Enter") { const pick = items[sel >= 0 ? sel : 0]; if (pick) { e.preventDefault(); location.hash = pick.href; input.blur(); input.value = ""; close(); } else { run(); } }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); const v = vis(); if (!v.length) return; sel = (sel + (e.key === "ArrowDown" ? 1 : -1) + v.length) % v.length; mark(); v[sel].scrollIntoView({ block: "nearest" }); }
+    else if (e.key === "Enter") { const v = vis(), pick = v[sel >= 0 ? sel : 0]; if (pick) { e.preventDefault(); location.hash = pick.getAttribute("href"); input.blur(); input.value = ""; close(); } else { run(); } }
     else if (e.key === "Escape") { close(); input.blur(); }
   });
-  box.addEventListener("mousedown", e => { const a = e.target.closest("a"); if (a) { setTimeout(() => { input.value = ""; close(); }, 0); } });
+  box.addEventListener("mousedown", e => {
+    if (e.target.closest(".showall")) { e.preventDefault(); return; }
+    const a = e.target.closest("a"); if (a) { setTimeout(() => { input.value = ""; close(); }, 0); }
+  });
+  box.addEventListener("click", e => {
+    const b = e.target.closest(".showall"); if (!b) return;
+    const m = b.previousElementSibling; if (m && m.classList.contains("moreres")) m.hidden = false;
+    b.remove(); input.focus();
+  });
 }
 
 /* ---------- text rendering ---------- */
@@ -904,18 +918,18 @@ function renderHome() {
     </div>
     <h2>Doing the work</h2>
     <div class="hubgrid four">
-      ${card("#/forms", "forms", "Forms and checklists", "Every form named in the Rules, with its filing process.", "")}
+      ${card("#/forms", "forms", "Forms and checklists", "Every form named in the Rules, with its filing process.", " ", "cf")}
       ${card("#/processes", "proc", "Processes", "Incorporation, registered office, AGM, Board meeting and more.", I.proc ? `${I.proc} processes` : "")}
       ${I.res ? card("#/resolutions", "res", "Model resolutions", "Ready wording for Board, committee and general meetings, with minutes.", `${I.res} resolutions`) : ""}
-      ${card("drafts/", "draft", "Drafts library", "Ready drafts in their original wording.", "")}
+      ${card("drafts/", "draft", "Drafts library", "Ready drafts in their original wording.", " ", "cd")}
     </div>
     <h2>Tools</h2>
     <div class="hubgrid">
       ${card("generators/", "gen", "Document generators", "Resolutions, notices, minutes, declarations, policies and filing packs, plus all the model resolutions. Fill in a form and download a Word file.", "56 documents and 190 model resolutions")}
       ${card("excel/", "xls", "Excel utilities", "Statutory registers, trackers, planners, filing and audit checklists, depreciation and ratio workbooks as free Excel files.", "32 workbooks")}
-      ${card("calendar/", "cal", "Compliance calendar", "Company-law due dates for your year end and AGM date, with a calendar file to download.", "")}
-      ${card("stamp/", "calc", "Stamp duty on companies", "Stamp duty on the MoA, AoA and capital increase, state by state, from the MCA rate table.", "")}
-      ${card("#/tools", "calc", "Notice and date calculator", "Notice periods, AGM and ROC due dates, deadlines after an event.", "")}
+      ${card("calendar/", "cal", "Compliance calendar", "Company-law due dates for your year end and AGM date, with a calendar file to download.", "Download as .ics or .csv")}
+      ${card("stamp/", "calc", "Stamp duty on companies", "Stamp duty on the MoA, AoA and capital increase, state by state, from the MCA rate table.", "State by state")}
+      ${card("#/tools", "calc", "Notice and date calculator", "Notice periods, AGM and ROC due dates, deadlines after an event.", "Count days from any date")}
       ${card("#/me", "me", "My workspace", "Saved sections, your private notes and recently read pages.", "")}
     </div></section>`;
 }
@@ -923,8 +937,11 @@ function showHome() {
   S.cur = null; document.title = "Compliance Lab"; setChrome(true);
   show(S.homeHTML); window.scrollTo(0, 0); navMark("");
   mountSearch($("#qh"), $("#resh"));
+  fetch("data/forms.json").then(r => r.ok ? r.json() : null).then(F => { const el = $(".cf i"); if (el && F) el.textContent = `${Object.keys(F).length} ${Object.keys(F).length === 1 ? "form" : "forms"}`; }).catch(() => {});
+  fetch("drafts/data/index.json").then(r => r.ok ? r.json() : null).then(D => { const el = $(".cd i"); if (el && D && D.drafts) el.textContent = `${D.drafts.length} ${D.drafts.length === 1 ? "draft" : "drafts"}`; }).catch(() => {});
   $$(".qchip").forEach(b => b.addEventListener("click", () => { const i = $("#qh"); i.value = b.dataset.q; i.focus(); i.dispatchEvent(new Event("input")); }));
-  const rc = recentList(); if (rc.length) $("#cont").innerHTML = `<h2>Continue where you left off</h2><div class="hubgrid four recent">${rc.slice(0, 4).map(r => `<a href="${esc(r.h)}" class="hc rc"><b>${esc(r.t)}</b><span>${esc(r.k)}</span></a>`).join("")}</div>`;
+  const saved = WS.get().saved.filter(n => S.map[n] !== undefined).map(n => ({ h: `#/s/${n}`, t: `Section ${n}: ${S.idx.sections[S.map[n]][1]}`, k: "Saved section" }));
+  const rc = [...saved, ...recentList().filter(r => !saved.some(x => x.h === r.h))]; if (rc.length) $("#cont").innerHTML = `<h2>${saved.length ? "Your saved sections and where you left off" : "Continue where you left off"}</h2><div class="hubgrid four recent">${rc.slice(0, 4).map(r => `<a href="${esc(r.h)}" class="hc rc"><b>${esc(r.t)}</b><span>${esc(r.k)}</span></a>`).join("")}</div>`;
 }
 function showAct() {
   S.cur = null; S.d = null; document.title = "Companies Act, 2013 | Compliance Lab"; setChrome(true); navMark("act");
@@ -1000,7 +1017,7 @@ async function showSection(n, q) {
       ${d.c ? `<div class="chap">Chapter ${esc(d.c)}</div><div class="chapt">${esc(nice(d.ct))}</div>` : ""}</aside>
     <div class="text"><div class="tapewrap" aria-hidden="true"><div class="tape"><i></i><b></b></div></div>
       <h1 tabindex="-1">${esc(d.t)}</h1>${d.s === "omitted" ? `<span class="badge">Omitted</span>` : ""}
-      <div class="stool"><button type="button" data-act="save" aria-pressed="${WS.get().saved.includes(n)}">${WS.get().saved.includes(n) ? "★ Saved" : "☆ Save"}</button><button type="button" data-act="cite">Copy citation</button><button type="button" data-act="copytext">Copy text</button><button type="button" data-act="print">Print</button></div>
+      <div class="stool"><button type="button" data-act="save" aria-pressed="${WS.get().saved.includes(n)}">${WS.get().saved.includes(n) ? "★ Saved" : "☆ Save"}</button><button type="button" data-act="cite">Copy citation</button><button type="button" data-act="copytext">Copy text</button><button type="button" data-act="print">Print</button><button type="button" data-act="word">Download for Word</button></div>
       ${d.forms && d.forms.length ? `<p class="forms">Forms in the Rules:${d.forms.map(f => `<a href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join("")}</p>` : ""}
       ${penaltyHTML(d)}
       <div class="body">${body}</div>
@@ -1305,6 +1322,14 @@ document.addEventListener("click", async e => {
   else if (act === "cite") toast(await copyText(`Section ${d.n}, Companies Act, 2013 (${d.t})`) ? "Citation copied" : "Could not copy");
   else if (act === "copytext") toast(await copyText(`Section ${d.n}. ${d.t}\n\n` + d.paras.map(p => (p.l ? p.l + " " : "") + p.x).join("\n")) ? "Section text copied" : "Could not copy");
   else if (act === "print") window.print();
+  else if (act === "word") {
+    const ind = { sub: 0, p: 0, cl: 24, sc: 48 };
+    const body = d.paras.map(p => { const m = ind[p.k] === undefined ? 12 : ind[p.k]; return `<p style="margin:0 0 6pt ${m}pt;text-align:justify">${p.l ? `<b>${esc(p.l)}</b>&nbsp;&nbsp;` : ""}${esc(p.x)}</p>`; }).join("");
+    const doc = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Section ${esc(d.n)}</title><style>body{font-family:"Times New Roman",serif;font-size:12pt;line-height:1.4}h1{font-size:15pt;margin:0 0 4pt}.src{font-size:10pt;color:#555;margin-top:14pt}</style></head><body><h1>${esc(d.n)}. ${esc(d.t)}</h1>${d.c ? `<p class="src">Chapter ${esc(d.c)}${d.ct ? ", " + esc(nice(d.ct)) : ""}</p>` : ""}${body}<p class="src">Source: Companies Act, 2013, section ${esc(d.n)}. Check the wording against the official text before you rely on it.</p></body></html>`;
+    const url = URL.createObjectURL(new Blob(["\ufeff", doc], { type: "application/msword" }));
+    const a = document.createElement("a"); a.href = url; a.download = `Companies Act 2013 - Section ${d.n}.doc`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
+    toast("Word file downloaded");
+  }
 });
 let noteTimer;
 document.addEventListener("input", e => { if (e.target.id === "mynote" && S.cur) { const v = e.target.value, n = S.cur; clearTimeout(noteTimer); noteTimer = setTimeout(() => WS.note(n, v), 300); } });
