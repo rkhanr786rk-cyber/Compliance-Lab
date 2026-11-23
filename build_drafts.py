@@ -339,23 +339,23 @@ PAGE = r'''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Drafts library</title>
+<title>Drafts library | Compliance Lab</title>
 <meta name="description" content="All drafts with their original wording. Search, read, copy or download the original Word file.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#e6ede8;--page:#fdfefd;--ink:#0f1f19;--muted:#506259;--rule:#c2d1c8;
-  --tape:#17614c;--link:#3a3aa6;--mark:#ffe59a;--bar:#0e3a2e;--barink:#e8f2ec;--fs:1;
+  --paper:#e9eef5;--page:#ffffff;--ink:#101a2b;--muted:#4b5a70;--rule:#c9d3e1;
+  --tape:#1c3d6e;--link:#1f4fb5;--mark:#ffe08a;--bar:#0f2747;--barink:#eef3fa;--gold:#c8a13a;--fs:1;
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --sans:"Zilla Slab",Rockwell,"Roboto Slab",Georgia,serif;
 }
 :root[data-theme=light]{color-scheme:light}
-:root[data-theme=sepia]{--paper:#e2d8bf;--page:#f3ecd7;--ink:#2a2418;--muted:#655a42;--rule:#cfc3a2;--tape:#2f5d3a;--link:#3b3797;--mark:#f5d87a;--bar:#2d3b2a;--barink:#f1ecd9}
-:root[data-theme=dark]{--paper:#0a1411;--page:#101d18;--ink:#e1ede6;--muted:#8da89b;--rule:#223a31;--tape:#5fcba6;--link:#a9a6ff;--mark:#4d4310;--bar:#06100d;--barink:#e1ede6;color-scheme:dark}
+:root[data-theme=sepia]{--paper:#e6dcc3;--page:#f8f2e0;--ink:#2a2418;--muted:#625740;--rule:#d0c4a2;--tape:#7a4b12;--link:#7a3b0c;--mark:#f5d87a;--bar:#3a2a14;--barink:#f6eedb}
+:root[data-theme=dark]{--paper:#0b1220;--page:#121b2e;--ink:#e8eef8;--muted:#9aabc4;--rule:#26344f;--tape:#e0b84f;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e8eef8;--gold:#e0b84f;color-scheme:dark}
 @media (prefers-color-scheme:dark){
-  :root[data-theme=auto]{--paper:#0a1411;--page:#101d18;--ink:#e1ede6;--muted:#8da89b;--rule:#223a31;--tape:#5fcba6;--link:#a9a6ff;--mark:#4d4310;--bar:#06100d;--barink:#e1ede6;color-scheme:dark}
+  :root[data-theme=auto]{--paper:#0b1220;--page:#121b2e;--ink:#e8eef8;--muted:#9aabc4;--rule:#26344f;--tape:#e0b84f;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e8eef8;--gold:#e0b84f;color-scheme:dark}
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -463,12 +463,40 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 .08em}
 .sheet-tools h1{font:700 clamp(1.5rem,3vw,2.1rem)/1.15 var(--sans);letter-spacing:-.01em}
 .sheet{border-radius:3px;box-shadow:0 14px 26px -22px rgba(5,25,18,.5)}
 .sheet h1,.sheet h2,.sheet h3,.sheet h4{font-family:var(--sans)}
+
+/* ===== matches the rest of the site: navy and gold, grouped menu, heading dropdown ===== */
+.bar{background:var(--bar);border-bottom:3px solid var(--gold)}
+.bar-in{flex-wrap:wrap}
+.bar nav{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.bar nav>a{color:var(--barink);text-decoration:none;font:600 .95rem var(--sans);opacity:.85;padding:.2rem 0;border-bottom:2px solid transparent}
+.bar nav>a:hover{opacity:1}
+.dd{position:relative}
+.dd summary{list-style:none;cursor:pointer;color:var(--barink);font:600 .95rem var(--sans);opacity:.85;padding:.2rem 0;border-bottom:2px solid transparent}
+.dd summary::-webkit-details-marker{display:none}
+.dd summary::after{content:"";display:inline-block;width:.4em;height:.4em;margin-left:.45em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-.2em) rotate(45deg)}
+.dd summary:hover,.dd[open] summary,.dd.on summary{opacity:1}.dd.on summary{border-bottom-color:var(--gold)}
+.ddm{position:absolute;z-index:30;top:100%;left:-.6rem;margin-top:.5rem;min-width:15rem;background:var(--bar);border:1px solid var(--gold);border-radius:3px;padding:.4rem;box-shadow:0 14px 30px -12px rgba(0,0,0,.6);display:flex;flex-direction:column}
+.ddm a{padding:.45rem .7rem;color:var(--barink);text-decoration:none;font:600 .95rem var(--sans);white-space:nowrap}
+.ddm a:hover,.ddm a[aria-current=page]{background:rgba(255,255,255,.1)}
+.sw[data-t=light]{--c:#fff}.sw[data-t=sepia]{--c:#f8f2e0}.sw[data-t=dark]{--c:#0b1220}
+.sw[aria-pressed=true]{border-color:var(--gold)!important}
+.pick{margin:0 0 .9rem}
+.pick label{display:block;font:600 .9rem var(--sans);margin-bottom:.25rem}
+.pick select{width:100%;font:500 1rem var(--sans);padding:.55rem .6rem;border:1px solid var(--rule);border-radius:3px;background:var(--page);color:var(--ink)}
+.pick select:focus{border-color:var(--link)}
+.intro h1{color:var(--tape)}
+:root[data-theme=dark] .intro h1{color:var(--ink)}
+@media (max-width:860px){.ddm{position:static;margin:.3rem 0 .2rem;min-width:0}.dd{width:100%}}
 </style>
 </head>
 <body>
 <header class="bar"><div class="bar-in">
-  <a class="brand" href="./">Drafts library</a>
-  <a class="back" href="../">&larr; Companies Act reader</a>
+  <a class="brand" href="../">Compliance Lab</a>
+  <nav aria-label="Sections"><a href="../">Home</a>
+    <details class="dd"><summary>Law</summary><div class="ddm"><a href="../#/act">Companies Act, 2013</a><a href="../#/lodr">SEBI LODR, 2015</a><a href="../#/cases">Case laws</a></div></details>
+    <details class="dd on"><summary>Practice</summary><div class="ddm"><a href="../#/forms">Forms and checklists</a><a href="../#/processes">Processes</a><a href="../#/resolutions">Model resolutions</a><a href="./" aria-current="page">Drafts library</a></div></details>
+    <details class="dd"><summary>Tools</summary><div class="ddm"><a href="../generators/">Document generators</a><a href="../excel/">Excel utilities</a><a href="../calendar/">Compliance calendar</a><a href="../stamp/">Stamp duty</a><a href="../#/tools">Calculator</a><a href="../#/me">My workspace</a></div></details>
+  </nav>
   <div class="find"><div class="field"><span class="sym" aria-hidden="true">&sect;</span>
     <input id="q" type="search" placeholder="Search drafts by name or any words inside" autocomplete="off" spellcheck="false" aria-label="Search drafts"></div></div>
   <div class="tools" role="group" aria-label="Reading settings">
@@ -480,7 +508,7 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 .08em}
   </div>
 </div></header>
 <main class="wrap">
-  <nav class="lp" aria-label="Drafts"><div class="chips" id="chips"></div><p class="cnt" id="cnt"></p><div id="list"></div></nav>
+  <nav class="lp" aria-label="Drafts"><div class="pick"><label for="gsel">Choose a heading</label><select id="gsel"></select></div><p class="cnt" id="cnt"></p><div id="list"></div></nav>
   <section class="rp" id="rp"></section>
 </main>
 <script>
@@ -515,7 +543,7 @@ function cats() { const m = new Map(); S.idx.forEach(d => m.set(d.category, (m.g
 
 function matches() {
   const w = words(S.q);
-  let list = S.idx.filter(d => !S.cat || d.category === S.cat);
+  let list = S.idx.filter(d => w.length || !S.cat || S.cat === "__all" || d.category === S.cat);
   if (!w.length) return list.map(d => ({ d }));
   const out = [];
   for (const d of list) {
@@ -536,11 +564,12 @@ function hl(text, w) {
 }
 function drawChips() {
   const all = S.idx.length;
-  $("#chips").innerHTML = `<button data-cat="" aria-pressed="${!S.cat}">All<span>${all}</span></button>` + cats().map(([c, n]) => `<button data-cat="${esc(c)}" aria-pressed="${S.cat === c}">${esc(c)}<span>${n}</span></button>`).join("");
+  $("#gsel").innerHTML = `<option value=""${S.cat ? "" : " selected"}>Choose a heading…</option>` + cats().map(([c, n]) => `<option value="${esc(c)}"${S.cat === c ? " selected" : ""}>${esc(c)} (${n})</option>`).join("") + `<option value="__all"${S.cat === "__all" ? " selected" : ""}>Show all headings (${all})</option>`;
 }
 function drawList() {
   const res = matches(), w = words(S.q);
-  $("#cnt").textContent = S.q ? `${res.length} ${res.length === 1 ? "draft matches" : "drafts match"} “${S.q}”` : `${res.length} ${res.length === 1 ? "draft" : "drafts"}${S.cat ? " in " + S.cat : ""}`;
+  if (!S.q && !S.cat) { $("#cnt").textContent = "Choose a heading above to see its drafts, or type in the search box."; $("#list").innerHTML = ""; return; }
+  $("#cnt").textContent = S.q ? `${res.length} ${res.length === 1 ? "draft matches" : "drafts match"} “${S.q}”` : `${res.length} ${res.length === 1 ? "draft" : "drafts"}${S.cat && S.cat !== "__all" ? " in " + S.cat : ""}`;
   if (!res.length) { $("#list").innerHTML = `<p class="none">Nothing matches. Try fewer or shorter words.</p>`; return; }
   const item = r => `<a class="it" href="#${esc(r.d.id)}"${S.cur && S.cur.id === r.d.id ? ' aria-current="true"' : ""}><b>${hl(r.d.title, w)}</b><span>${esc(r.d.category)} &middot; ${r.d.words} words</span>${r.sn ? `<span class="sn">${hl(r.sn, w)}</span>` : ""}</a>`;
   if (S.q) { $("#list").innerHTML = res.map(item).join(""); return; }
@@ -579,12 +608,14 @@ async function copyText(t) {
 }
 document.addEventListener("click", async e => {
   const c = e.target.closest("[data-cat]");
-  if (c && !c.closest(".sheet")) { S.cat = c.dataset.cat; drawChips(); drawList(); if (location.hash) history.replaceState(null, "", location.pathname); intro(); drawList(); window.scrollTo(0, 0); return; }
+  if (c && !c.closest(".sheet")) { S.cat = c.dataset.cat; store.set("dr_cat", S.cat); drawChips(); drawList(); if (location.hash) history.replaceState(null, "", location.pathname); intro(); drawList(); window.scrollTo(0, 0); return; }
   if (e.target.closest("#mb")) { history.replaceState(null, "", location.pathname + location.search); intro(); drawList(); return; }
   if (e.target.closest("#cp")) { const t = (S.doc && S.doc.text) || ""; toast(await copyText(t) ? "Text copied" : "Could not copy. Select the text and copy it."); }
   if (e.target.closest("#pr")) window.print();
   if (e.target.closest("#ln")) toast(await copyText(location.href) ? "Link copied" : "Could not copy the link");
 });
+$("#gsel").addEventListener("change", e => { S.cat = e.target.value; store.set("dr_cat", S.cat); if (location.hash) history.replaceState(null, "", location.pathname + location.search); intro(); drawList(); });
+document.addEventListener("click", e => { $$(".dd[open]").forEach(d => { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
 let timer;
 $("#q").addEventListener("input", e => {
   S.q = e.target.value.trim(); loadText().then(() => { if (S.q === e.target.value.trim()) drawList(); });
@@ -604,6 +635,7 @@ window.addEventListener("hashchange", route);
   applyPrefs();
   try { S.idx = (await getJSON("data/index.json")).drafts; }
   catch (e) { $("#rp").innerHTML = `<div class="intro"><h1>Drafts library</h1><p>No drafts are published yet. Upload Word files to the drafts folder of the repository and the library appears after the next build.</p></div>`; return; }
+  const keep = store.get("dr_cat"); if (keep && (keep === "__all" || S.idx.some(d => d.category === keep))) S.cat = keep;
   drawChips(); drawList(); route();
 })();
 })();
