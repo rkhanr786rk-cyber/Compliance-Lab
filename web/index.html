@@ -52,6 +52,16 @@ button{font:inherit;color:inherit}
 .field input::placeholder{color:var(--muted)}
 .results{position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:40;background:var(--page);border:1px solid var(--rule);border-radius:3px;box-shadow:0 16px 36px -14px rgba(8,16,30,.45);max-height:min(70vh,34rem);overflow:auto;text-align:left}
 .results h4{margin:0;padding:.6rem .95rem .2rem;font:500 .82rem var(--sans);color:var(--muted)}
+.pick{margin:0 0 1rem;max-width:26rem}.pick label{display:block;font:600 .9rem var(--sans);margin-bottom:.25rem}.pick select{width:100%;font:500 1rem var(--sans);padding:.55rem .6rem;border:1px solid var(--rule);border-radius:3px;background:var(--page);color:var(--ink)}
+.qr{border:1px solid var(--rule);border-radius:3px;background:var(--page);margin:.7rem 0;padding:0 1rem}
+.qr>summary{cursor:pointer;font:600 1.02rem var(--sans);padding:.7rem 0}
+.qd{display:grid;grid-template-columns:11rem 1fr;gap:.35rem 1rem;margin:.4rem 0 .9rem}
+.qd dt{font:600 .9rem var(--sans);color:var(--muted)}.qd dd{margin:0}
+.tw{overflow-x:auto}.tbl{border-collapse:collapse;width:100%;background:var(--page);font-size:.92rem}
+.tbl th,.tbl td{border:1px solid var(--rule);padding:.45rem .65rem;text-align:left;vertical-align:top}.tbl th{background:var(--bar);color:var(--barink);font:600 .88rem var(--sans)}
+.steps p:empty{display:none}
+.pgrp h2{margin-top:1.6rem}
+@media (max-width:640px){.qd{grid-template-columns:1fr}.qd dt{margin-top:.4rem}}
 .showall{display:block;width:100%;text-align:left;background:none;border:0;padding:.3rem .95rem .5rem;font:600 .85rem var(--sans);color:var(--link);cursor:pointer}
 .showall:hover{text-decoration:underline}
 .hc i:empty{display:none}
@@ -1777,6 +1787,10 @@ async function showCase(id) {
 }
 
 /* ---------- processes ---------- */
+const CODE_RE = /\b(?:INC|MGT|SH|PAS|CHG|DIR|ADT|DPT|IEPF|AOC|MSME|CSR|STK|WIN|RSC|CAA|NCLT|GNL|MR|BEN)-\d+[A-Z]?\b/g;
+const linkForms = t => esc(t).replace(CODE_RE, c => `<a href="#/forms?f=${encodeURIComponent(c)}">${c}</a>`);
+const ftable = rows => `<table class="tbl"><thead><tr><th>Form or format</th><th>Filed with or kept at</th><th>Purpose</th><th>Deadline</th><th>Late filing or fee note</th></tr></thead><tbody>${rows.map(r => `<tr><td>${linkForms(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table>`;
+const qdl = f => `<dl class="qd"><dt>Governing provisions</dt><dd>${esc(f.prov)}</dd><dt>Key e-forms</dt><dd>${linkForms(f.eforms)}</dd><dt>Statutory timeline</dt><dd>${esc(f.timeline)}</dd><dt>Key conditions and limits</dt><dd>${esc(f.limits)}</dd></dl>`;
 async function showProcesses(id) {
   const my = ++S.token; S.cur = null; S.d = null; setChrome(false); navMark("processes"); id = decodeURIComponent(id || "");
   const P = await getProcs(); if (my !== S.token) return;
@@ -1785,9 +1799,17 @@ async function showProcesses(id) {
   const sl = n => S.map[n] !== undefined ? `<a href="#/s/${esc(n)}">s.${esc(n)}</a>` : `<span>s.${esc(n)}</span>`;
   if (!id) {
     document.title = "Processes | Compliance Lab";
+    const hd = [...new Map(P.map(p => [p.pk + p.part, [p.pk + p.part, p.part, 0]])).values()].sort((x, y) => x[0] < y[0] ? -1 : 1);
+    hd.forEach(h => { h[2] = P.filter(p => p.pk + p.part === h[0]).length; });
     show(`<section class="pg proc-pg">${head}<h1>Processes</h1><p class="lede">The common company-secretarial jobs, step by step: what to do, which forms to file, which sections apply, a checklist to tick off, and the ready drafts that go with it.</p>
-      <div class="hubgrid">${P.map(p => `<a href="#/processes/${esc(p.id)}" class="hc"><b>${esc(p.title)}</b><span>${esc(p.summary)}</span><i>${p.steps.length} steps · ${p.check.length} checklist items${p.drafts.length ? " · " + plural(p.drafts.length, "draft") : ""}</i></a>`).join("")}</div>
+      <div class="pick"><label for="psel">Choose a heading</label><select id="psel"><option value="">All headings (${P.length})</option>${hd.map(h => `<option value="${esc(h[0])}">${esc(h[1])} (${h[2]})</option>`).join("")}</select></div>
+      ${hd.map(h => `<section class="pgrp" data-k="${esc(h[0])}"><h2>${esc(h[1])}</h2><div class="hubgrid">${P.filter(p => p.pk + p.part === h[0]).map(p => `<a href="#/processes/${esc(p.id)}" class="hc"><b>${esc(p.title)}</b><span>${esc(p.summary)}</span><i>${p.steps.length} steps · ${p.check.length} checklist items${p.drafts.length ? " · " + plural(p.drafts.length, "draft") : ""}</i></a>`).join("")}</div></section>`).join("")}
+      <details class="rl big" id="allforms"><summary>All forms and deadlines (65)</summary><div id="aft" class="tw"><p class="small">Loading…</p></div></details>
       <p class="note">Each process is a working guide written from the Act and the Rules. Time limits, fees and forms change, so confirm them against the current Rules and MCA notifications before you file.</p></section>`);
+    const ps = $("#psel"), apply = () => { $$(".pgrp").forEach(g => { g.hidden = !!ps.value && g.dataset.k !== ps.value; }); try { localStorage.setItem("pr_part", ps.value); } catch (e) {} };
+    try { const k = localStorage.getItem("pr_part"); if (k && hd.some(h => h[0] === k)) ps.value = k; } catch (e) {}
+    ps.addEventListener("change", apply); apply();
+    $("#allforms").addEventListener("toggle", async e => { if (!e.target.open || e.target.dataset.done) return; e.target.dataset.done = "1"; try { const T = await (await fetch("data/formtable.json")).json(); $("#aft").innerHTML = ftable(T.map(r => r.slice(2))); } catch (err) { $("#aft").innerHTML = `<p class="small">The table could not be loaded.</p>`; } });
     return window.scrollTo(0, 0);
   }
   const p = P.find(x => x.id === id);
@@ -1796,9 +1818,11 @@ async function showProcesses(id) {
   const lodrLinks = (p.lodr || []).filter(l => S.idx.lodr);
   show(`<section class="pg proc-pg proc">${head}<h1 tabindex="-1">${esc(p.title)}</h1><p class="lede">${esc(p.summary)}</p>
     <p class="note"><b>When.</b> ${esc(p.when)}</p>
+    ${(p.facts || []).length ? `<h2>Quick reference</h2>${p.facts.map(f => f.steps || f.docs ? `<details class="qr"${p.facts.length === 1 ? " open" : ""}><summary>${esc(f.title)}</summary>${qdl(f)}${f.steps ? `<h3>Short step list</h3><ol class="steps">${f.steps.map(x => `<li>${linkForms(x)}</li>`).join("")}</ol>` : ""}${f.docs ? `<h3>Complete document checklist</h3>${ckHTML("proc-" + p.id + "-q" + f.n, f.docs)}` : ""}</details>` : qdl(f)).join("")}` : ""}
     <h2>Steps</h2>
     <ol class="steps">${p.steps.map(st => `<li><b>${esc(st.t)}</b><p>${esc(st.d)}</p>${st.r && st.r.length && S.idx.res ? resList(st.r, "Model resolutions for this step") : ""}${(st.f && st.f.length) || (st.s && st.s.length) ? `<p class="chips">${(st.f || []).map(f => `<a class="chip2 f" href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join("")}${(st.s || []).map(n => `<span class="chip2">${sl(n)}</span>`).join("")}</p>` : ""}</li>`).join("")}</ol>
     <h2>Checklist</h2>${ckHTML("proc-" + p.id, p.check)}
+    ${(p.fr || []).length ? `<h2>Forms and deadlines</h2><div class="tw">${ftable(p.fr)}</div>` : ""}
     ${(p.rs || []).length && S.idx.res ? `<h2>Model resolutions</h2><details class="rl big"><summary>Show all ${p.rs.reduce((a, g) => a + g.r.length, 0)} resolutions for this process</summary>${p.rs.map(g => `<h3>${esc(g.t)}</h3><ul class="ll">${g.r.map(r => `<li><a href="#/resolutions/${esc(r[0])}">${esc(r[1])}</a></li>`).join("")}</ul>`).join("")}${(p.more || []).map(m => `<p class="small"><a href="#/resolutions?p=${esc(m[1])}">${esc(m[0])}</a></p>`).join("")}<p class="small muted">Model text from CimplyFive's Text of Model Resolutions (2016 edition). Fill the blanks and check the current Rules before use.</p>` : ""}
     ${p.drafts.length ? `<h2>Drafts for this process</h2><ul class="ll">${p.drafts.map(d => `<li><a href="drafts/#${esc(d.id)}">${esc(d.title)}</a> <span class="muted small">${esc(d.category)}</span></li>`).join("")}</ul>` : `<h2>Drafts for this process</h2><p class="small">No draft in the Drafts library matches this process yet. <a href="drafts/">Open the Drafts library</a>, or add a draft whose file name says what it is, for example “${esc(p.title)}”.</p>`}
     ${lodrLinks.length ? `<h2>If the company is listed</h2><ul class="ll">${lodrLinks.map(l => `<li><a href="#/lodr/${esc(l.id)}">Regulation ${esc(l.id)}</a> ${esc(l.why)}</li>`).join("")}</ul>` : ""}
