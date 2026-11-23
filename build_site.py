@@ -13,7 +13,6 @@ import datetime
 import json
 import re
 import shutil
-import subprocess
 import sys
 from pathlib import Path
 
@@ -311,14 +310,7 @@ def main():
     (OUT / "data" / "s").mkdir(parents=True)
     (OUT / "data" / "r").mkdir(parents=True)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
-    shutil.copy(PAGE, OUT / "reference.html")
-    desk_source = PAGE.parent / "desk"
-    shutil.copy(desk_source / "index.html", OUT / "index.html")
-    shutil.copytree(desk_source, OUT / "desk", ignore=shutil.ignore_patterns("index.html"))
-    subprocess.run([
-        sys.executable, str(Path(__file__).with_name("build_desk_library.py")),
-        "--root", ".", "--out", str(OUT / "desk" / "library"),
-    ], check=True)
+    shutil.copy(PAGE, OUT / "index.html")
 
     def dump(path, obj):
         path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
