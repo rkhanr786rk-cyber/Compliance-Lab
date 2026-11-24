@@ -1419,7 +1419,7 @@ GENS.push(
   },
   {
     id: "corprep", group: "Meetings", title: "Authorising a representative to attend a general meeting", short: "Board resolution and letter for a company or other body corporate that is a member.",
-    basis: "Section 113, Companies Act, 2013; Rule 15 of the Companies (Management and Administration) Rules, 2014 does not apply; Secretarial Standard 2",
+    basis: "Section 113, Companies Act, 2013; Secretarial Standard 2",
     fields: [{ id: "mdate", label: "Date of the resolution", type: "date" }, { id: "target", label: "Name of the company whose meeting it is" }, { id: "gmdate", label: "Date of the general meeting", type: "date" }, { id: "gmtype", label: "Meeting", type: "select", opts: [["agm", "Annual General Meeting"], ["egm", "Extraordinary General Meeting"]] },
       { id: "rep", label: "Name of the representative" }, { id: "repdes", label: "Designation of the representative" }, { id: "folio", label: "Folio or demat account of the shareholding" }, { id: "shares", label: "Number of shares held", type: "number" }, { id: "sname", label: "Name of the signing director" }],
     notes: ["Section 113 lets a body corporate that is a member authorise a representative, by a resolution of its board or governing body, to attend and vote, with the same rights as an individual member.", "Deposit a certified copy of the resolution with the company before the meeting, as the notice says, usually not less than 48 hours before."],
@@ -1647,6 +1647,85 @@ GENS.push({
     return out.concat([S(), P("**III (C).** [Other objects, if any. A company may delete this clause.]")]);
   },
 });
+/* ---------- batch 6: prescribed formats SH-4, SH-13, SH-14 (fields and headings follow the prescribed forms) ---------- */
+const PRNOTE = "The headings, fields and order follow the form prescribed under the Companies (Share Capital and Debentures) Rules, 2014 (amended in 2022 for SH-4). The wording is rebuilt from the form, so compare it with the copy on the MCA website or in the Gazette before you rely on it.";
+GENS.push(
+  {
+    id: "sh4", group: "Prescribed formats", title: "Form SH-4: Securities transfer form", short: "The prescribed transfer deed for shares or debentures, with the transferor, transferee and office parts.",
+    basis: "Section 56, Companies Act, 2013; Rule 11(1), Companies (Share Capital and Debentures) Rules, 2014 (Form SH-4)",
+    fields: [{ id: "edate", label: "Date of execution", type: "date" }, { id: "cin", label: "CIN of the company" }, { id: "exch", label: "Stock exchange where listed, if any" },
+      { id: "kind", label: "Kind or class of security", ph: "Equity shares" }, { id: "nom", label: "Nominal value of each unit (Rs.)", type: "number" }, { id: "called", label: "Amount called up per unit (Rs.)", type: "number" }, { id: "paid", label: "Amount paid up per unit (Rs.)", type: "number" },
+      { id: "qty", label: "Number of securities transferred", type: "number" }, { id: "qtyw", label: "Number in words" }, { id: "cons", label: "Consideration received (Rs.)", type: "number" }, { id: "consw", label: "Consideration in words" },
+      { id: "from", label: "Distinctive numbers from" }, { id: "to", label: "Distinctive numbers to" }, { id: "certs", label: "Corresponding certificate numbers" },
+      { id: "tfolio", label: "Transferor's registered folio number" }, { id: "tor", label: "Transferor(s) (names, up to three, one per line)", type: "textarea" },
+      { id: "tee", label: "Transferee(s) (name in full, one per line)", type: "textarea" }, { id: "teefa", label: "Father's, mother's or spouse's name of the transferee" }, { id: "teeaddr", label: "Address of the transferee, with e-mail", type: "textarea" }, { id: "teeocc", label: "Occupation of the transferee" }, { id: "teefolio", label: "Transferee's existing folio number, if any" }, { id: "stamp", label: "Value of stamp affixed (Rs.)", type: "number" }],
+    notes: [PRNOTE, "Lodge the form with the company within 60 days of the date of execution, together with the share certificate, or the letter of allotment if no certificate was issued. Pay stamp duty on the form at the rate the State fixes (0.015% of the consideration on the transfer of shares, where the State has not changed it).", "Where the securities are held in demat form, the transfer is made through the depository by a delivery instruction slip. This form is for physical securities."],
+    build(v) {
+      const cs = (v.tor || "").split(/\n+/).filter(Boolean), ce = (v.tee || "").split(/\n+/).filter(Boolean);
+      const o = [C("**Form No. SH-4**"), C("**SECURITIES TRANSFER FORM**"), C("[Pursuant to section 56 of the Companies Act, 2013 and sub-rule (1) of rule 11 of the Companies (Share Capital and Debentures) Rules, 2014]"), S(),
+        R("Date of execution: " + vd(v, "edate", "date")),
+        P("FOR THE CONSIDERATION stated below the \"Transferor(s)\" named do hereby transfer to the \"Transferee(s)\" named the securities specified below subject to the conditions on which the said securities are now held by the Transferor(s) and the Transferee(s) do hereby agree to accept and hold the said securities subject to the conditions aforesaid."),
+        L("CIN: " + va(v, "cin", "CIN")), L("Name of the company (in full): **" + CO(v) + "**"), L("Name of the Stock Exchange where the company is listed, if any: " + va(v, "exch", "not listed")), S(),
+        P("**DESCRIPTION OF SECURITIES**"),
+        TB([["Kind / class of securities", "Nominal value of each unit", "Amount called up per unit", "Amount paid up per unit"], [va(v, "kind", "class"), "Rs. " + va(v, "nom", "value"), "Rs. " + va(v, "called", "amount"), "Rs. " + va(v, "paid", "amount")]], [2600, 2100, 2200, 2100]),
+        TB([["No. of securities being transferred", "", "Consideration received (Rs.)", ""], ["In figures", va(v, "qty", "number"), "In figures", va(v, "cons", "amount")], ["In words", va(v, "qtyw", "number in words"), "In words", va(v, "consw", "amount in words")]], [2300, 2200, 2300, 2200]),
+        TB([["Distinctive number", "From", "To"], ["", va(v, "from", "from"), va(v, "to", "to")], ["Corresponding certificate nos.", va(v, "certs", "certificate nos."), ""]], [3200, 2900, 2900]), S(),
+        P("**TRANSFEROR'S PARTICULARS**"), L("Registered folio number: " + va(v, "tfolio", "folio")),
+        TB([["Name(s) of the registered holder(s) (in full)", "Signature(s)"]].concat([0, 1, 2].map(i => [(i + 1) + ". " + (cs[i] || ""), (i + 1) + ". "])), [5000, 4000]),
+        P("I, hereby confirm that the transferor has signed before me."), L("Signature of witness: ______________________"), L("Name of witness: ______________________"), L("Address of witness: ______________________    Pin code: __________"), S(),
+        P("**TRANSFEREE'S PARTICULARS**"),
+        TB([["", "Transferee 1", "Transferee 2", "Transferee 3"], ["Name in full", ce[0] || "", ce[1] || "", ce[2] || ""], ["Father's / mother's / spouse's name", va(v, "teefa", ""), "", ""], ["Address, with e-mail id", va(v, "teeaddr", "").replace(/\n+/g, ", "), "", ""], ["Occupation", va(v, "teeocc", ""), "", ""], ["Existing folio number, if any", va(v, "teefolio", ""), "", ""], ["Signature(s)", "", "", ""]], [2400, 2200, 2200, 2200]),
+        L("Folio number of the transferee: " + va(v, "teefolio", "")), L("Specimen signature of the transferee(s): 1. ____________  2. ____________  3. ____________"), L("Value of stamp affixed: Rs. " + va(v, "stamp", "amount")), S(),
+        P("**DECLARATION BY THE TRANSFEREE** (tick one)"), I("[  ] No government approval is required for the transfer under the Foreign Exchange Management (Non-debt Instruments) Rules, 2019."), I("[  ] Approval of the government is required for the transfer, has been obtained, and is enclosed."), S(),
+        P("**ENCLOSURES**"), I("1. Certificate of shares or debentures or other securities"), I("2. If no certificate is issued, letter of allotment"), I("3. Copy of PAN card of all the transferee(s) (for all listed cos.)"), I("4. Other, specify: ______________________"), S(),
+        P("**FOR OFFICE USE ONLY**"), L("Checked by: ____________    Signature tallied by: ____________"), L("Entered in the Register of Transfer on ____________ vide Transfer No. ____________"), L("Approval date: ____________"), L("Power of attorney / probate / death certificate / letter of administration registered on ____________ at No. ____________")];
+      return o;
+    },
+  },
+  {
+    id: "sh13", group: "Prescribed formats", title: "Form SH-13: Nomination form", short: "The prescribed nomination by a holder of securities, in which the nominee receives the rights on death.",
+    basis: "Section 72, Companies Act, 2013; Rule 19(1), Companies (Share Capital and Debentures) Rules, 2014 (Form SH-13)",
+    fields: [{ id: "ndate", label: "Date", type: "date" }, { id: "holders", label: "Name(s) of the holder(s) (up to three, one per line)", type: "textarea" }, { id: "nature", label: "Nature of securities", ph: "Equity shares" }, { id: "folio", label: "Folio number" }, { id: "qty", label: "Number of securities", type: "number" }, { id: "certno", label: "Certificate numbers" }, { id: "dist", label: "Distinctive numbers" },
+      { id: "nname", label: "Name of the nominee" }, { id: "ndob", label: "Date of birth of the nominee", type: "date" }, { id: "nfather", label: "Father's, mother's or spouse's name" }, { id: "nocc", label: "Occupation" }, { id: "nnat", label: "Nationality" }, { id: "naddr", label: "Address and e-mail", type: "textarea" }, { id: "nrel", label: "Relationship with the holder" },
+      { id: "minor", label: "Is the nominee a minor?", type: "select", opts: [["no", "No"], ["yes", "Yes"]] }, { id: "maj", label: "Date of attaining majority", type: "date" }, { id: "gname", label: "Name of the guardian" }, { id: "gaddr", label: "Address of the guardian", type: "textarea" }, { id: "alt", label: "Person to receive the securities if the minor nominee dies (name, address, relationship)", type: "textarea" }, { id: "wit", label: "Name and address of the witness", type: "textarea" }],
+    notes: [PRNOTE, "A nomination can be made by individuals holding securities alone or jointly; each holder signs. Where there are joint holders, the nominee gets the rights only after the death of all of them. A minor can be a nominee, in which case a guardian must be named.", "A nomination can be cancelled or changed in Form SH-14. A nomination made in a will, or an earlier nomination, is overridden by a later one."],
+    build(v) {
+      const hs = (v.holders || "").split(/\n+/).filter(Boolean), o = [C("**Form No. SH-13**"), C("**NOMINATION FORM**"), C("[Pursuant to section 72 of the Companies Act, 2013 and rule 19(1) of the Companies (Share Capital and Debentures) Rules, 2014]"), S(),
+        L("To"), L("**" + CO(v) + "**"), L("[Address of the company]"), S(),
+        P(`I/We ${hs.length ? hs.join(", ") : "[names of the holder(s)]"}, the holder(s) of the securities particulars of which are given hereunder, wish to make a nomination and do hereby nominate the following person(s) in whom shall vest, all the rights in respect of such securities in the event of my/our death.`),
+        P("**(1) PARTICULARS OF THE SECURITIES (in respect of which nomination is being made)**"),
+        TB([["Nature of securities", "Folio No.", "No. of securities", "Certificate No.", "Distinctive No."], [va(v, "nature", "nature"), va(v, "folio", "folio"), va(v, "qty", "number"), va(v, "certno", "numbers"), va(v, "dist", "numbers")]], [1900, 1500, 1600, 1900, 2100]),
+        P("**(2) PARTICULARS OF NOMINEE(S)**"),
+        TB([["Name", "Date of birth", "Father's / mother's / spouse's name", "Occupation", "Nationality", "Address, e-mail id", "Relationship with the security holder"], [va(v, "nname", "name"), vd(v, "ndob", "date"), va(v, "nfather", "name"), va(v, "nocc", "occupation"), va(v, "nnat", "nationality"), va(v, "naddr", "address").replace(/\n+/g, ", "), va(v, "nrel", "relationship")]], [1300, 1100, 1400, 1200, 1100, 1800, 1100]),
+        P("**(3) IN CASE NOMINEE(S) IS A MINOR**"),
+        TB([["Date of birth", "Date of attaining majority", "Name of guardian", "Address of guardian"], [v.minor === "yes" ? vd(v, "ndob", "date") : "NA", v.minor === "yes" ? vd(v, "maj", "date") : "NA", v.minor === "yes" ? va(v, "gname", "name") : "NA", v.minor === "yes" ? va(v, "gaddr", "address").replace(/\n+/g, ", ") : "NA"]], [2200, 2200, 2300, 2300]),
+        P("**(4) IN CASE OF NOMINATION BY HOLDERS OF A MINOR NOMINEE** the person who shall be entitled to the securities if the nominee dies before attaining the age of majority:"), L(v.minor === "yes" ? va(v, "alt", "name, address, relationship") : "NA"), S(),
+        L("Name(s) and signature(s) of the security holder(s):"), ...(hs.length ? hs : ["[names]"]).map((h, i) => L((i + 1) + ". " + h + "   ______________________")), S(), R("Date: " + vd(v, "ndate", "date")), S(),
+        P("**Witness:**"), L("Signature: ______________________"), L("Name and address: " + va(v, "wit", "name and address").replace(/\n+/g, ", "))];
+      return o;
+    },
+  },
+  {
+    id: "sh14", group: "Prescribed formats", title: "Form SH-14: Cancellation or variation of nomination", short: "The prescribed form to cancel a nomination, or to cancel it and name someone else.",
+    basis: "Section 72, Companies Act, 2013; Rule 19(9), Companies (Share Capital and Debentures) Rules, 2014 (Form SH-14)",
+    fields: [{ id: "ndate", label: "Date", type: "date" }, { id: "holders", label: "Name(s) of the holder(s) (one per line)", type: "textarea" }, { id: "cname", label: "Name of the nominee whose nomination is cancelled" }, { id: "caddr", label: "Address of that nominee", type: "textarea" },
+      { id: "nature", label: "Nature of securities", ph: "Equity shares" }, { id: "folio", label: "Folio number" }, { id: "qty", label: "Number of securities", type: "number" }, { id: "certno", label: "Certificate numbers" }, { id: "dist", label: "Distinctive numbers" },
+      { id: "newn", label: "Nominate someone else?", type: "select", opts: [["no", "No, only cancel"], ["yes", "Yes, nominate a new person"]] }, { id: "nname", label: "New nominee: name" }, { id: "ndob", label: "New nominee: date of birth", type: "date" }, { id: "nfather", label: "New nominee: father's, mother's or spouse's name" }, { id: "nocc", label: "New nominee: occupation" }, { id: "nnat", label: "New nominee: nationality" }, { id: "naddr", label: "New nominee: address and e-mail", type: "textarea" }, { id: "nrel", label: "New nominee: relationship with the holder" }, { id: "wit", label: "Name and address of the witness", type: "textarea" }],
+    notes: [PRNOTE, "Every holder who signed the original nomination must sign this form. A new nomination replaces the earlier one."],
+    build(v) {
+      const hs = (v.holders || "").split(/\n+/).filter(Boolean), nw = v.newn === "yes", o = [C("**Form No. SH-14**"), C("**CANCELLATION OR VARIATION OF NOMINATION**"), C("[Pursuant to sub-section (3) of section 72 of the Companies Act, 2013 and sub-rule (9) of rule 19 of the Companies (Share Capital and Debentures) Rules, 2014]"), S(),
+        L("To"), L("**" + CO(v) + "**"), L("[Address of the company]"), S(),
+        P(`I/We ${hs.length ? hs.join(", ") : "[names of the holder(s)]"}, the holder(s) of the securities particulars of which are given hereunder, hereby cancel the nomination made by me/us in favour of **${va(v, "cname", "name of nominee")}** of ${va(v, "caddr", "address").replace(/\n+/g, ", ")}, in respect of the below mentioned securities.`),
+        P("**PARTICULARS OF THE SECURITIES**"),
+        TB([["Nature of securities", "Folio No.", "No. of securities", "Certificate No.", "Distinctive No."], [va(v, "nature", "nature"), va(v, "folio", "folio"), va(v, "qty", "number"), va(v, "certno", "numbers"), va(v, "dist", "numbers")]], [1900, 1500, 1600, 1900, 2100])];
+      if (nw) o.push(P("**I/We hereby nominate the following person(s) in place of the nominee cancelled above, in whom all rights in the securities shall vest in the event of my/our death.**"),
+        TB([["Name", "Date of birth", "Father's / mother's / spouse's name", "Occupation", "Nationality", "Address, e-mail id", "Relationship with the security holder"], [va(v, "nname", "name"), vd(v, "ndob", "date"), va(v, "nfather", "name"), va(v, "nocc", "occupation"), va(v, "nnat", "nationality"), va(v, "naddr", "address").replace(/\n+/g, ", "), va(v, "nrel", "relationship")]], [1300, 1100, 1400, 1200, 1100, 1800, 1100]),
+        P("[If the new nominee is a minor, give the date of birth, the date of attaining majority, and the name and address of the guardian, as in Form SH-13.]"));
+      o.push(S(), L("Name(s) and signature(s) of the security holder(s):"), ...(hs.length ? hs : ["[names]"]).map((h, i) => L((i + 1) + ". " + h + "   ______________________")), S(), R("Date: " + vd(v, "ndate", "date")), S(), P("**Witness:**"), L("Signature: ______________________"), L("Name and address: " + va(v, "wit", "name and address").replace(/\n+/g, ", ")));
+      return o;
+    },
+  },
+);
 
 
 /* ---------- blocks -> html (preview) and docx ---------- */
