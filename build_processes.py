@@ -599,11 +599,17 @@ def build_library(out):
                     docs.append(d)
         law = "; ".join(dict.fromkeys(f["prov"] for f in p.get("facts", []) if f.get("prov")))
         lib.append({"id": p["id"], "kind": "guide", "title": p["title"], "group": GOVER.get(p["id"]) or GMAP.get(p["part"], "CSR and other compliance"), "summary": p["summary"], "when": p["when"], "applies": "", "law": law, "steps": steps,
-                    "forms": [{"form": r[0], "filed": r[1], "purpose": r[2], "deadline": r[3], "late": r[4]} for r in p.get("fr", [])], "checklist": p["check"], "docs": docs, "meetings": [], "resolutions": [], "dd": [], "flags": [],
+                    "forms": [{"form": r[0], "filed": r[1], "purpose": r[2], "deadline": r[3], "late": r[4]} for r in p.get("fr", [])], "checklist": p["check"], "docs": docs, "meetings": [], "resolutions": [], "dd": [], "flags": [], "private": "", "extras": [],
                     "facts": p.get("facts", []), "rs": p.get("rs", []), "drafts": p.get("drafts", []), "lodr": p.get("lodr", [])})
     ids = {e["id"] for e in lib}
     pk = []
-    for f in sorted(Path("guide/packs").glob("*.json")) if Path("guide/packs").is_dir() else []:
+    found = {}
+    for f in sorted(Path(".").rglob("[0-9][0-9][0-9]-[0-9][0-9][0-9].json")):
+        if f.parts[0] in ("site", "node_modules", ".git"):
+            continue
+        found[f.name] = f          # the same file name found twice counts once
+    print(f"Pack files found: {len(found)}" + (f" (for example {next(iter(found.values()))})" if found else " (none: upload the packs folder)"))
+    for name, f in sorted(found.items()):
         try:
             for q in json.loads(f.read_text(encoding="utf-8")):
                 pk.append(q)
@@ -620,7 +626,7 @@ def build_library(out):
         lib.append({"id": i, "kind": "pack", "title": q["title"], "group": q["group"], "summary": q["summary"], "when": q["when"], "applies": q.get("applies", ""), "law": q["law"],
                     "steps": [{"t": s["t"], "d": s["d"], "time": s.get("time", ""), "forms": s.get("forms", []), "docs": s.get("docs", []), "r": [], "s": []} for s in q["steps"]],
                     "forms": [{"form": f["form"], "filed": "", "purpose": f["purpose"], "deadline": f["deadline"], "late": ""} for f in q["forms"]], "checklist": q["checklist"], "docs": docs,
-                    "meetings": q["meetings"], "resolutions": q["resolutions"], "dd": q["docs"], "flags": q["flags"], "facts": [], "rs": [], "drafts": [], "lodr": []})
+                    "meetings": q["meetings"], "resolutions": q["resolutions"], "dd": q["docs"], "flags": q["flags"], "private": q.get("private", ""), "extras": q.get("extras", []), "facts": [], "rs": [], "drafts": [], "lodr": []})
     (SITE / "data" / "library.json").write_text(json.dumps(lib, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     try:
         ix = SITE / "data" / "index.json"
