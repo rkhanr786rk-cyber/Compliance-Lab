@@ -581,6 +581,55 @@ def main():
     except (OSError, ValueError):
         pass
     print(f"{len(out)} processes written; {sum(len(p['drafts']) for p in out)} draft matches")
+    build_library(out)
+
+GMAP = {"Capital": "Share capital and securities", "Others": "CSR and other compliance", "Meetings": "Meetings and resolutions", "Directors": "Directors", "Exit": "Closing down and revival", "Dividend": "Share capital and securities", "MOA Alteration": "Registered office and name", "Incorporation": "Incorporation", "Registered Office": "Registered office and name", "Auditors": "Auditors", "Deposits": "Debentures, deposits and borrowing", "Charges": "Loans, investments and charges", "Annual Compliance": "CSR and other compliance", "NCLT": "Mergers and restructuring"}
+GOVER = {"share-transfer": "Share transfer and certificates", "borrowing": "Debentures, deposits and borrowing", "debentures": "Debentures, deposits and borrowing", "charge": "Loans, investments and charges", "related-party": "Loans, investments and charges", "dormant-company": "Closing down and revival", "strike-off": "Closing down and revival", "winding-up": "Closing down and revival", "restructuring": "Mergers and restructuring", "capital-reduction": "Share capital and securities", "change-name": "Registered office and name", "alter-moa-aoa": "Registered office and name", "authorised-capital": "Share capital and securities", "esop": "Share capital and securities", "allotment": "Share capital and securities", "bonus-split": "Share capital and securities", "change-financial-year": "CSR and other compliance", "beneficial-owners": "CSR and other compliance", "book-closure": "Share capital and securities", "independent-director": "Directors", "committees": "Meetings and resolutions", "postal-ballot": "Meetings and resolutions"}
+
+
+def build_library(out):
+    """Merge the guides (processes) and the procedure packs into one library file."""
+    lib = []
+    for p in out:
+        steps = [{"t": st["t"], "d": st["d"], "time": "", "forms": st.get("f", []), "docs": [], "r": st.get("r", []), "s": st.get("s", [])} for st in p["steps"]]
+        docs = []
+        for f in p.get("facts", []):
+            for d in f.get("docs", []) or []:
+                if d not in docs:
+                    docs.append(d)
+        law = "; ".join(dict.fromkeys(f["prov"] for f in p.get("facts", []) if f.get("prov")))
+        lib.append({"id": p["id"], "kind": "guide", "title": p["title"], "group": GOVER.get(p["id"]) or GMAP.get(p["part"], "CSR and other compliance"), "summary": p["summary"], "when": p["when"], "applies": "", "law": law, "steps": steps,
+                    "forms": [{"form": r[0], "filed": r[1], "purpose": r[2], "deadline": r[3], "late": r[4]} for r in p.get("fr", [])], "checklist": p["check"], "docs": docs, "meetings": [], "resolutions": [], "dd": [], "flags": [],
+                    "facts": p.get("facts", []), "rs": p.get("rs", []), "drafts": p.get("drafts", []), "lodr": p.get("lodr", [])})
+    ids = {e["id"] for e in lib}
+    pk = []
+    for f in sorted(Path("guide/packs").glob("*.json")) if Path("guide/packs").is_dir() else []:
+        try:
+            for q in json.loads(f.read_text(encoding="utf-8")):
+                pk.append(q)
+        except (OSError, ValueError) as e:
+            print(f"Pack file {f.name} could not be read: {e}")
+    for q in sorted(pk, key=lambda x: x["no"]):
+        i = q["id"] if q["id"] not in ids else q["id"] + "-pack"
+        ids.add(i)
+        docs = []
+        for st in q["steps"]:
+            for d in st.get("docs", []):
+                if d and d not in docs:
+                    docs.append(d)
+        lib.append({"id": i, "kind": "pack", "title": q["title"], "group": q["group"], "summary": q["summary"], "when": q["when"], "applies": q.get("applies", ""), "law": q["law"],
+                    "steps": [{"t": s["t"], "d": s["d"], "time": s.get("time", ""), "forms": s.get("forms", []), "docs": s.get("docs", []), "r": [], "s": []} for s in q["steps"]],
+                    "forms": [{"form": f["form"], "filed": "", "purpose": f["purpose"], "deadline": f["deadline"], "late": ""} for f in q["forms"]], "checklist": q["checklist"], "docs": docs,
+                    "meetings": q["meetings"], "resolutions": q["resolutions"], "dd": q["docs"], "flags": q["flags"], "facts": [], "rs": [], "drafts": [], "lodr": []})
+    (SITE / "data" / "library.json").write_text(json.dumps(lib, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    try:
+        ix = SITE / "data" / "index.json"
+        d = json.loads(ix.read_text(encoding="utf-8"))
+        d["proc"] = len(lib)
+        ix.write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    except (OSError, ValueError):
+        pass
+    print(f"library: {len(lib)} entries ({len(out)} guides, {len(pk)} packs)")
 
 
 if __name__ == "__main__":
