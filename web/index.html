@@ -533,6 +533,48 @@ body{font-size:1.04rem}
 .fatt{margin:.2rem 0 0;padding-left:1.3rem;font:400 1rem/1.5 var(--serif)}
 .forms-list details{background:var(--page)}
 @media (max-width:820px){.steps>li{padding-left:2.6rem}}
+.lb-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem;margin:1.2rem 0}
+.lb-stats div{background:var(--page);border:1px solid var(--rule);border-radius:4px;padding:.55rem .8rem}
+.lb-stats b{display:block;font:700 1.7rem/1.1 var(--serif);color:var(--tape)}
+.lb-stats span{font:500 .82rem var(--sans);color:var(--muted)}
+.lb-bar{display:flex;flex-direction:column;gap:.15rem;background:var(--page);border:1px solid var(--rule);border-radius:4px;padding:.6rem .8rem;margin-bottom:1.1rem}
+.lb-bar button{display:grid;grid-template-columns:13rem 1fr 2rem;gap:.7rem;align-items:center;background:none;border:0;padding:.12rem 0;cursor:pointer;font:400 .86rem var(--sans);color:var(--ink);text-align:left}
+.lb-bar button i{display:block;height:.55rem;background:var(--tape);border-radius:2px}
+.lb-bar button em{font-style:normal;color:var(--muted);text-align:right}
+.lb-bar button:hover span{text-decoration:underline}
+.lb-tools{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.7rem}
+.lb-tools input{flex:1;min-width:14rem;font:400 1rem var(--sans);padding:.55rem .7rem;border:1px solid var(--rule);border-radius:4px;background:var(--page);color:var(--ink)}
+.lb-kind{display:flex}
+.lb-kind button,.lb-chips button{font:500 .85rem var(--sans);border:1px solid var(--rule);background:var(--page);color:var(--ink);padding:.35rem .8rem;cursor:pointer}
+.lb-kind button:first-child{border-radius:4px 0 0 4px}.lb-kind button:last-child{border-radius:0 4px 4px 0}
+.lb-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem}
+.lb-chips button{border-radius:99px;padding:.2rem .75rem;font-size:.8rem}
+.lb-kind button.on,.lb-chips button.on{background:var(--tape);border-color:var(--tape);color:var(--page)}
+.lb-tag{font:600 .74rem var(--sans)!important;color:var(--muted)!important}
+.lb-tag.pack{color:var(--tape)!important}
+.lb-meta{margin:.2rem 0 0}
+.lb-tabs{display:flex;gap:.2rem;flex-wrap:wrap;margin:1rem 0 1.2rem;border-bottom:1px solid var(--rule)}
+.lb-tabs a{font:500 .92rem var(--sans);padding:.5rem .9rem;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px}
+.lb-tabs a.on{color:var(--ink);border-color:var(--tape);font-weight:700}
+.lb-time{display:inline-block;margin-left:.6rem;font:500 .78rem var(--sans);color:var(--page);background:var(--muted);border-radius:3px;padding:.05rem .45rem}
+.lb-form{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:.6rem;background:var(--page);border:1px solid var(--rule);border-radius:4px;padding:.8rem;margin:.6rem 0}
+.lb-form label{display:flex;flex-direction:column;gap:.15rem;font:500 .78rem var(--sans);color:var(--muted)}
+.lb-form input{font:400 .95rem var(--sans);padding:.4rem .5rem;border:1px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink)}
+.lb-act{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.lb-btn{font:600 .85rem var(--sans);border:1px solid var(--rule);background:var(--page);color:var(--ink);border-radius:4px;padding:.45rem .9rem;cursor:pointer}
+.lb-btn.pri{background:var(--tape);border-color:var(--tape);color:var(--page)}
+.lb-pane{display:grid;grid-template-columns:16rem 1fr;gap:1rem;margin-top:.6rem}
+.lb-list{display:flex;flex-direction:column;gap:.3rem;max-height:34rem;overflow:auto}
+.lb-list button{text-align:left;font:500 .86rem/1.3 var(--sans);border:1px solid var(--rule);border-left:3px solid var(--rule);background:var(--page);color:var(--ink);padding:.45rem .6rem;cursor:pointer;border-radius:3px}
+.lb-list button.on{border-left-color:var(--tape);font-weight:700}
+.lb-doc{background:var(--page);border:1px solid var(--rule);border-radius:4px;padding:.9rem 1.1rem;min-width:0}
+.lb-doc h2{margin:0 0 .5rem;font-size:1.15rem}
+.lb-doc pre{white-space:pre-wrap;word-wrap:break-word;font:400 .92rem/1.6 var(--serif);margin:0 0 .8rem}
+.lb-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:1.6rem}
+.qd{margin:.6rem 0}
+@media (max-width:760px){.lb-pane{grid-template-columns:1fr}.lb-list{max-height:12rem}.lb-bar button{grid-template-columns:8rem 1fr 1.6rem}}
+@media print{.lb-tabs,.lb-form,.lb-act,.lb-list,.lb-nav{display:none}}
+
 @media print{.hubgrid{display:block}.ckbar{display:none}}
 
 
@@ -929,7 +971,7 @@ function renderHome() {
     <h2>Doing the work</h2>
     <div class="hubgrid four">
       ${card("#/forms", "forms", "Forms and checklists", "Every form named in the Rules, with its filing process.", " ", "cf")}
-      ${card("#/processes", "proc", "Processes", "Incorporation, registered office, AGM, Board meeting and more.", I.proc ? `${I.proc} processes` : "")}
+      ${card("#/processes", "proc", "Processes", "Guides and packs for the whole procedure: steps, forms, deadlines and drafts you can fill and download.", I.proc ? `${I.proc} processes` : "")}
       ${I.res ? card("#/resolutions", "res", "Model resolutions", "Ready wording for Board, committee and general meetings, with minutes.", `${I.res} resolutions`) : ""}
       ${card("drafts/", "draft", "Drafts library", "Ready drafts in their original wording.", " ", "cd")}
     </div>
@@ -1594,7 +1636,6 @@ document.addEventListener("click", async e => {
   if (rs) { const ul = $(`.ck[data-ck="${CSS.escape(rs.dataset.ckreset)}"]`); if (ul) { $$("input", ul).forEach(x => x.checked = false); store.set("ck:" + rs.dataset.ckreset, "[]"); ckCount(ul); } }
 });
 const NS = /^not stated/i;
-async function getProcs() { if (S.procs === undefined) { try { S.procs = await getJSON("data/processes.json"); } catch (e) { S.procs = null; } } return S.procs; }
 async function fillForm(box, f) {
   const P = await getProcs(), used = (P || []).filter(p => p.steps.some(st => (st.f || []).includes(f)));
   let g = null;
@@ -1791,44 +1832,144 @@ const CODE_RE = /\b(?:INC|MGT|SH|PAS|CHG|DIR|ADT|DPT|IEPF|AOC|MSME|CSR|STK|WIN|R
 const linkForms = t => esc(t).replace(CODE_RE, c => `<a href="#/forms?f=${encodeURIComponent(c)}">${c}</a>`);
 const ftable = rows => `<table class="tbl"><thead><tr><th>Form or format</th><th>Filed with or kept at</th><th>Purpose</th><th>Deadline</th><th>Late filing or fee note</th></tr></thead><tbody>${rows.map(r => `<tr><td>${linkForms(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table>`;
 const qdl = f => `<dl class="qd"><dt>Governing provisions</dt><dd>${esc(f.prov)}</dd><dt>Key e-forms</dt><dd>${linkForms(f.eforms)}</dd><dt>Statutory timeline</dt><dd>${esc(f.timeline)}</dd><dt>Key conditions and limits</dt><dd>${esc(f.limits)}</dd></dl>`;
-async function showProcesses(id) {
-  const my = ++S.token; S.cur = null; S.d = null; setChrome(false); navMark("processes"); id = decodeURIComponent(id || "");
+/* ---------- process library: guides and procedure packs ---------- */
+async function getProcs() {
+  if (S.procs === undefined) {
+    try {
+      const L = await getJSON("data/library.json");
+      S.procs = L.map(e => { e.check = e.checklist; e.pk = ""; e.part = e.group; e.steps.forEach(st => { st.f = st.forms; }); return e; });
+    } catch (e) {
+      try { const L = await getJSON("data/processes.json"); S.procs = L.map(e => { e.group = e.part; e.kind = "guide"; e.forms = []; e.checklist = e.check; e.meetings = []; e.resolutions = []; e.dd = []; e.flags = []; e.docs = []; e.law = ""; e.applies = ""; return e; }); } catch (e2) { S.procs = null; }
+    }
+  }
+  return S.procs;
+}
+const linkSecs = t => esc(t).replace(/\b(Sections?|Rules?|Regulations?)\s+([0-9]+[A-Z]?(?:\s*\([0-9a-z]+\))*)/g, (m, w, n) => { const k = n.replace(/\(.*$/, "").trim(); return /^Section/.test(w) && S.map[k] !== undefined ? `<a href="#/s/${k}">${w} ${n}</a>` : m; });
+const LBF = ["co", "cin", "ro", "place", "ndate", "date", "time", "venue", "sign", "desig"];
+const LBL = { co: "Company name", cin: "CIN", ro: "Registered office", place: "Place", ndate: "Date of notice or signing", date: "Meeting date", time: "Meeting time", venue: "Venue", sign: "Name of signatory", desig: "Designation of signatory" };
+const lbGet = () => { try { return JSON.parse(store.get("cl_fields") || "{}"); } catch (e) { return {}; } };
+const lbFill = (t, F) => (t || "").replace(/\{(co|cin|ro|place|ndate|date|time|venue|sign|desig)\}/g, (m, k) => (F[k] || "").trim() ? F[k].trim() : (k === "co" ? "[Company name]" : "[" + LBL[k].toLowerCase() + "]"));
+const lbKind = { ordinary: "an Ordinary Resolution", special: "a Special Resolution", board: "a Board resolution", circular: "a resolution by circulation" };
+function lbDrafts(e, F) {
+  const out = [], R = {}; e.resolutions.forEach(r => { R[r.id] = r; });
+  const hdr = `{co}\nCIN: {cin}\nRegistered office: {ro}\n\n`;
+  const sig = `\nFor {co}\n\n{sign}\n{desig}\nPlace: {place}\nDate: {ndate}`;
+  e.meetings.forEach((m, mi) => {
+    const items = m.items.map(i => R[i]).filter(Boolean), who = m.type === "board" ? "Board of Directors" : m.type === "circular" ? "directors" : "members";
+    if (m.type === "circular") {
+      out.push({ title: m.title || "Resolution by circulation", text: hdr + `RESOLUTION PASSED BY CIRCULATION\n(Section 175 of the Companies Act, 2013)\n\nThe following resolution${items.length > 1 ? "s were" : " was"} circulated to all the directors, with the necessary papers, on {ndate}:\n\n` + items.map((r, i) => `ITEM ${i + 1}: ${r.title}\nRESOLVED THAT ${r.text.replace(/^RESOLVED\s+THAT\s*/i, "")}`).join("\n\n") + `\n\nThe resolution is deemed passed on the date by which it was approved by a majority of the directors entitled to vote on it, unless a director or the committee asked for it to be decided at a meeting. It will be noted at the next Board meeting.\n` + sig });
+      return;
+    }
+    const agenda = ["Leave of absence, if any.", "Confirmation of the minutes of the previous meeting."].concat(items.map(r => "To consider and approve: " + r.title + ".")).concat(m.type === "board" ? ["To authorise a director, KMP or the Company Secretary to sign the papers and file the e-forms with the Registrar.", "Any other business with the permission of the Chair."] : []);
+    if (m.type === "board") {
+      out.push({ title: "Notice: " + (m.title || "Board meeting"), text: hdr + `NOTICE OF MEETING OF THE BOARD OF DIRECTORS\n\nDate of notice: {ndate}\nTo: All the directors\n\nNotice is given under Section 173(3) of the Companies Act, 2013 and Secretarial Standard 1 that a meeting of the Board of Directors will be held on {date} at {time} at {venue}, or by video conference or other audio-visual means as the Rules permit, to transact the business below.\n\nNotice period: ${m.notice_days || "as the law requires"}.\n\nAGENDA\n` + agenda.map((a, i) => `${i + 1}. ${a}`).join("\n") + `\n\nThe notes on each item and the draft resolutions are attached.\n\nBy order of the Board` + sig });
+      out.push({ title: "Resolutions: " + (m.title || "Board meeting"), text: hdr + `CERTIFIED TRUE COPY OF THE RESOLUTION${items.length > 1 ? "S" : ""} PASSED AT THE MEETING OF THE BOARD OF DIRECTORS HELD ON {date} AT {time} AT {venue}\n\n` + items.map((r, i) => `ITEM ${i + 1}: ${r.title.toUpperCase()}\n\n${r.text}`).join("\n\n") + `\n\nCertified to be a true copy.\n` + sig });
+    } else {
+      const gm = m.type === "agm" ? "ANNUAL GENERAL MEETING" : "EXTRAORDINARY GENERAL MEETING", ex = items.filter(r => r.explanatory);
+      out.push({ title: "Notice: " + (m.title || gm.toLowerCase()), text: hdr + `NOTICE OF THE ${gm}\n\nDate of notice: {ndate}\n\nNotice is given that the ${gm.toLowerCase()} of the members of {co} will be held on {date} at {time} at {venue}, or by video conference where permitted, to transact the following business.\n\nNotice period: ${m.notice_days || "at least 21 clear days, or shorter with the consent that Section 101 requires"}.\n\n` + items.map((r, i) => `ITEM ${i + 1}: ${r.title.toUpperCase()}\n\nTo consider and, if thought fit, to pass the following as ${lbKind[r.by] || "a resolution"}:\n\n${r.text}`).join("\n\n") + (ex.length ? `\n\nEXPLANATORY STATEMENT (Section 102 of the Companies Act, 2013)\n\n` + ex.map(r => `Item: ${r.title}\n${r.explanatory}`).join("\n\n") + `\n\nNone of the directors, key managerial persons or their relatives is interested in the resolution(s), except as stated above.` : "") + `\n\nNotes: A member entitled to attend and vote may appoint a proxy, who need not be a member. The proxy form must reach the company at least 48 hours before the meeting.\n\nBy order of the Board` + sig });
+    }
+  });
+  e.dd.forEach(d => out.push({ title: d.title, text: hdr + d.title.toUpperCase() + "\n\n" + d.paras.join("\n\n") + "\n" + sig }));
+  return out.map(d => ({ title: d.title, text: lbFill(d.text, F) }));
+}
+function lbWord(title, drafts) {
+  const css = `body{font-family:"Times New Roman",serif;font-size:12pt;line-height:1.45}h1{font-size:20pt}h2{font-size:14pt;font-family:Arial,sans-serif;page-break-before:always}p{margin:0 0 7pt}`;
+  const body = drafts.map((d, i) => `<h2${i ? "" : ' style="page-break-before:avoid"'}>${esc(d.title)}</h2>${d.text.split(/\n{2,}/).map(b => `<p>${esc(b).replace(/\n/g, "<br>")}</p>`).join("")}`).join("");
+  const doc = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>${esc(title)}</title><style>${css}</style></head><body><h1>${esc(title)}</h1>${body}</body></html>`;
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿", doc], { type: "application/msword" }));
+  a.download = title.replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 80) + ".doc"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+const LBT = [["overview", "Overview"], ["req", "Law and conditions"], ["process", "Process"], ["docs", "Forms and documents"], ["drafts", "Drafts"]];
+const lbFormsOf = e => [...new Set(e.forms.map(f => f.form).concat(...e.steps.map(s => s.forms)).join(" ").match(CODE_RE) || [])];
+function lbText(e) { return (e.title + " " + e.summary + " " + e.group + " " + e.law + " " + e.forms.map(f => f.form + " " + f.purpose).join(" ") + " " + e.steps.map(s => s.t + " " + s.d).join(" ")).toLowerCase(); }
+function lbDraftCount(e) { return e.kind === "pack" ? e.meetings.reduce((n, m) => n + (m.type === "circular" ? 1 : 2), 0) + e.dd.length : (e.drafts || []).length + ((e.rs || []).length ? 1 : 0); }
+async function showProcesses(arg) {
+  const my = ++S.token; S.cur = null; S.d = null; setChrome(false); navMark("processes");
+  const parts = decodeURIComponent(arg || "").split("/"), id = parts[0], tab = LBT.some(t => t[0] === parts[1]) ? parts[1] : "overview";
   const P = await getProcs(); if (my !== S.token) return;
   const head = `<p class="small"><a href="#/">Home</a>${id ? ` / <a href="#/processes">Processes</a>` : ""}</p>`;
   if (!P || !P.length) { document.title = "Processes | Compliance Lab"; return show(`<section class="pg">${head}<h1>Processes</h1><p class="note">The processes are not loaded yet.</p></section>`); }
   const sl = n => S.map[n] !== undefined ? `<a href="#/s/${esc(n)}">s.${esc(n)}</a>` : `<span>s.${esc(n)}</span>`;
   if (!id) {
     document.title = "Processes | Compliance Lab";
-    const hd = [...new Map(P.map(p => [p.pk + p.part, [p.pk + p.part, p.part, 0]])).values()].sort((x, y) => x[0] < y[0] ? -1 : 1);
-    hd.forEach(h => { h[2] = P.filter(p => p.pk + p.part === h[0]).length; });
-    show(`<section class="pg proc-pg">${head}<h1>Processes</h1><p class="lede">The common company-secretarial jobs, step by step: what to do, which forms to file, which sections apply, a checklist to tick off, and the ready drafts that go with it.</p>
-      <div class="pick"><label for="psel">Choose a heading</label><select id="psel"><option value="">All headings (${P.length})</option>${hd.map(h => `<option value="${esc(h[0])}">${esc(h[1])} (${h[2]})</option>`).join("")}</select></div>
-      ${hd.map(h => `<section class="pgrp" data-k="${esc(h[0])}"><h2>${esc(h[1])}</h2><div class="hubgrid">${P.filter(p => p.pk + p.part === h[0]).map(p => `<a href="#/processes/${esc(p.id)}" class="hc"><b>${esc(p.title)}</b><span>${esc(p.summary)}</span><i>${p.steps.length} steps · ${p.check.length} checklist items${p.drafts.length ? " · " + plural(p.drafts.length, "draft") : ""}</i></a>`).join("")}</div></section>`).join("")}
-      <details class="rl big" id="allforms"><summary>All forms and deadlines (65)</summary><div id="aft" class="tw"><p class="small">Loading…</p></div></details>
-      <p class="note">Each process is a working guide written from the Act and the Rules. Time limits, fees and forms change, so confirm them against the current Rules and MCA notifications before you file.</p></section>`);
-    const ps = $("#psel"), apply = () => { $$(".pgrp").forEach(g => { g.hidden = !!ps.value && g.dataset.k !== ps.value; }); try { localStorage.setItem("pr_part", ps.value); } catch (e) {} };
-    try { const k = localStorage.getItem("pr_part"); if (k && hd.some(h => h[0] === k)) ps.value = k; } catch (e) {}
-    ps.addEventListener("change", apply); apply();
+    const G = {}; P.forEach(p => { G[p.group] = (G[p.group] || 0) + 1; }); const gk = Object.keys(G).sort(), mx = Math.max(...Object.values(G));
+    const nf = new Set(P.flatMap(lbFormsOf)).size, nd = P.reduce((n, p) => n + lbDraftCount(p), 0), np = P.filter(p => p.kind === "pack").length;
+    show(`<section class="pg proc-pg lb">${head}<h1>Processes</h1><p class="lede">Every job step by step: the law, the forms and deadlines, a checklist, and the drafts you need, ready to fill and download. Guides are written from the Act and the Rules. Packs cover a procedure from start to finish and build the notice, agenda and resolutions for you.</p>
+      <div class="lb-stats"><div><b>${P.length}</b><span>Processes</span></div><div><b>${np}</b><span>Packs with drafts</span></div><div><b>${gk.length}</b><span>Subject groups</span></div><div><b>${nf}</b><span>Forms covered</span></div><div><b>${nd}</b><span>Drafts</span></div></div>
+      <div class="lb-bar">${gk.sort((a, b) => G[b] - G[a]).map(g => `<button type="button" data-g="${esc(g)}"><span>${esc(g)}</span><i style="width:${G[g] / mx * 100}%"></i><em>${G[g]}</em></button>`).join("")}</div>
+      <div class="lb-tools"><input id="lbq" type="search" placeholder="Search a process, a section or a form, for example MGT-14, auditor or 185" aria-label="Search processes"><div class="lb-kind" role="group" aria-label="Type"><button type="button" data-k="" class="on">All</button><button type="button" data-k="pack">Packs</button><button type="button" data-k="guide">Guides</button></div></div>
+      <div class="lb-chips"><button type="button" data-g="" class="on">All groups</button>${gk.map(g => `<button type="button" data-g="${esc(g)}">${esc(g)}</button>`).join("")}</div>
+      <p class="small" id="lbn"></p><div class="hubgrid" id="lbg"></div>
+      <details class="rl big" id="allforms"><summary>All forms and deadlines</summary><div id="aft" class="tw"><p class="small">Loading…</p></div></details>
+      <p class="note">Time limits, fees and forms change, so confirm them against the current Rules and MCA notifications before you file. Drafts are starting points: read each one and adapt it to your company and your Articles.</p></section>`);
+    const st = { q: "", g: "", k: "" }; try { const g0 = store.get("pr_group"); if (g0 && G[g0]) st.g = g0; } catch (e) {}
+    const run = () => {
+      const q = st.q.toLowerCase().trim().split(/\s+/).filter(Boolean), L = P.filter(p => (!st.g || p.group === st.g) && (!st.k || p.kind === st.k) && q.every(w => lbText(p).includes(w)));
+      $("#lbn").textContent = `${L.length} of ${P.length} processes`;
+      $("#lbg").innerHTML = L.map(p => `<a href="#/processes/${esc(p.id)}" class="hc"><span class="lb-tag ${p.kind}">${p.kind === "pack" ? "Pack" : "Guide"} · ${esc(p.group)}</span><b>${esc(p.title)}</b><span>${esc(p.summary)}</span><i>${p.steps.length} steps · ${p.forms.length} ${p.forms.length === 1 ? "form" : "forms"} · ${lbDraftCount(p)} ${lbDraftCount(p) === 1 ? "draft" : "drafts"}</i></a>`).join("") || `<p class="note">No process matches. Try fewer words.</p>`;
+      $$(".lb-chips button").forEach(b => b.classList.toggle("on", b.dataset.g === st.g)); $$(".lb-kind button").forEach(b => b.classList.toggle("on", b.dataset.k === st.k));
+    };
+    $("#lbq").addEventListener("input", e => { st.q = e.target.value; run(); });
+    $$(".lb-chips button,.lb-bar button").forEach(b => b.addEventListener("click", () => { st.g = b.dataset.g; store.set("pr_group", st.g); run(); if (b.closest(".lb-bar")) $("#lbg").scrollIntoView({ behavior: "smooth", block: "start" }); }));
+    $$(".lb-kind button").forEach(b => b.addEventListener("click", () => { st.k = b.dataset.k; run(); }));
+    run();
     $("#allforms").addEventListener("toggle", async e => { if (!e.target.open || e.target.dataset.done) return; e.target.dataset.done = "1"; try { const T = await (await fetch("data/formtable.json")).json(); $("#aft").innerHTML = ftable(T.map(r => r.slice(2))); } catch (err) { $("#aft").innerHTML = `<p class="small">The table could not be loaded.</p>`; } });
     return window.scrollTo(0, 0);
   }
   const p = P.find(x => x.id === id);
   if (!p) return showMessage(`<p>There is no process called ${esc(id)}. <a href="#/processes">See all processes</a>.</p>`);
   document.title = `${p.title} | Compliance Lab`;
-  const lodrLinks = (p.lodr || []).filter(l => S.idx.lodr);
-  show(`<section class="pg proc-pg proc">${head}<h1 tabindex="-1">${esc(p.title)}</h1><p class="lede">${esc(p.summary)}</p>
-    <p class="note"><b>When.</b> ${esc(p.when)}</p>
-    ${(p.facts || []).length ? `<h2>Quick reference</h2>${p.facts.map(f => f.steps || f.docs ? `<details class="qr"${p.facts.length === 1 ? " open" : ""}><summary>${esc(f.title)}</summary>${qdl(f)}${f.steps ? `<h3>Short step list</h3><ol class="steps">${f.steps.map(x => `<li>${linkForms(x)}</li>`).join("")}</ol>` : ""}${f.docs ? `<h3>Complete document checklist</h3>${ckHTML("proc-" + p.id + "-q" + f.n, f.docs)}` : ""}</details>` : qdl(f)).join("")}` : ""}
-    <h2>Steps</h2>
-    <ol class="steps">${p.steps.map(st => `<li><b>${esc(st.t)}</b><p>${esc(st.d)}</p>${st.r && st.r.length && S.idx.res ? resList(st.r, "Model resolutions for this step") : ""}${(st.f && st.f.length) || (st.s && st.s.length) ? `<p class="chips">${(st.f || []).map(f => `<a class="chip2 f" href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join("")}${(st.s || []).map(n => `<span class="chip2">${sl(n)}</span>`).join("")}</p>` : ""}</li>`).join("")}</ol>
-    <h2>Checklist</h2>${ckHTML("proc-" + p.id, p.check)}
-    ${(p.fr || []).length ? `<h2>Forms and deadlines</h2><div class="tw">${ftable(p.fr)}</div>` : ""}
-    ${(p.rs || []).length && S.idx.res ? `<h2>Model resolutions</h2><details class="rl big"><summary>Show all ${p.rs.reduce((a, g) => a + g.r.length, 0)} resolutions for this process</summary>${p.rs.map(g => `<h3>${esc(g.t)}</h3><ul class="ll">${g.r.map(r => `<li><a href="#/resolutions/${esc(r[0])}">${esc(r[1])}</a></li>`).join("")}</ul>`).join("")}${(p.more || []).map(m => `<p class="small"><a href="#/resolutions?p=${esc(m[1])}">${esc(m[0])}</a></p>`).join("")}<p class="small muted">Model text from CimplyFive's Text of Model Resolutions (2016 edition). Fill the blanks and check the current Rules before use.</p>` : ""}
-    ${p.drafts.length ? `<h2>Drafts for this process</h2><ul class="ll">${p.drafts.map(d => `<li><a href="drafts/#${esc(d.id)}">${esc(d.title)}</a> <span class="muted small">${esc(d.category)}</span></li>`).join("")}</ul>` : `<h2>Drafts for this process</h2><p class="small">No draft in the Drafts library matches this process yet. <a href="drafts/">Open the Drafts library</a>, or add a draft whose file name says what it is, for example “${esc(p.title)}”.</p>`}
-    ${lodrLinks.length ? `<h2>If the company is listed</h2><ul class="ll">${lodrLinks.map(l => `<li><a href="#/lodr/${esc(l.id)}">Regulation ${esc(l.id)}</a> ${esc(l.why)}</li>`).join("")}</ul>` : ""}
-    <p class="note">This is a working guide written from the Act and the Rules, not legal advice. Check time limits and fees against the current Rules and MCA notifications before filing.</p>
+  const i = P.indexOf(p), forms = lbFormsOf(p), chips = fs => fs.length ? `<p class="chips">${fs.map(f => `<a class="chip2 f" href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join("")}</p>` : "";
+  let body = "";
+  if (tab === "overview") {
+    const dl = p.forms.filter(f => f.deadline).slice(0, 4);
+    body = `<p class="lede">${esc(p.summary)}</p><p class="note"><b>When.</b> ${esc(p.when)}</p>${p.applies ? `<p class="note"><b>Applies to.</b> ${esc(p.applies)}</p>` : ""}
+      <dl class="qd"><dt>Governing provisions</dt><dd>${linkSecs(p.law || "See the facts under Law and conditions")}</dd><dt>Forms</dt><dd>${forms.length ? forms.map(f => `<a href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join(", ") : "No e-form is prescribed"}</dd><dt>Steps</dt><dd>${p.steps.length} steps and ${p.checklist.length} checklist items</dd>${dl.length ? `<dt>Main deadlines</dt><dd>${dl.map(f => `${esc(f.form.length > 40 ? f.purpose : f.form)}: ${esc(f.deadline)}`).join("<br>")}</dd>` : ""}<dt>Drafts</dt><dd>${lbDraftCount(p) ? lbDraftCount(p) + " ready to fill and download" : "None yet"}</dd></dl>
+      ${p.flags.length ? `<h2>Check before you rely on this</h2><ul class="ll">${p.flags.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : ""}`;
+  } else if (tab === "req") {
+    const tm = p.steps.filter(s => s.time);
+    body = `<h2>Governing provisions</h2><p>${linkSecs(p.law || "Not stated.")}</p>${p.applies ? `<h2>Applies to</h2><p>${esc(p.applies)}</p>` : ""}${tm.length ? `<h2>Time limits in this process</h2><div class="tw"><table class="tbl"><thead><tr><th>Step</th><th>Timeline</th></tr></thead><tbody>${tm.map(s => `<tr><td>${esc(s.t)}</td><td>${esc(s.time)}</td></tr>`).join("")}</tbody></table></div>` : ""}
+      ${(p.facts || []).length ? `<h2>Quick reference</h2>${p.facts.map(f => `<h3>${esc(f.title)}</h3>${qdl(f)}`).join("")}` : ""}
+      ${p.flags.length ? `<h2>Points to verify</h2><ul class="ll">${p.flags.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : ""}
+      ${(p.lodr || []).filter(l => S.idx.lodr).length ? `<h2>If the company is listed</h2><ul class="ll">${p.lodr.filter(l => S.idx.lodr).map(l => `<li><a href="#/lodr/${esc(l.id)}">Regulation ${esc(l.id)}</a> ${esc(l.why)}</li>`).join("")}</ul>` : ""}`;
+  } else if (tab === "process") {
+    body = `<ol class="steps">${p.steps.map(st => `<li><b>${esc(st.t)}</b>${st.time ? `<span class="lb-time">${esc(st.time)}</span>` : ""}<p>${linkSecs(st.d)}</p>${st.r && st.r.length && S.idx.res ? resList(st.r, "Model resolutions for this step") : ""}${(st.docs || []).length ? `<ul class="fatt">${st.docs.map(d => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${(st.forms && st.forms.length) || (st.s && st.s.length) ? `<p class="chips">${(st.forms || []).map(f => `<a class="chip2 f" href="#/forms?f=${encodeURIComponent(f)}">${esc(f)}</a>`).join("")}${(st.s || []).map(n => `<span class="chip2">${sl(n)}</span>`).join("")}</p>` : ""}</li>`).join("")}</ol>`;
+  } else if (tab === "docs") {
+    body = `<h2>Checklist</h2>${ckHTML("proc-" + p.id, p.checklist)}
+      ${p.forms.length ? `<h2>Forms and deadlines</h2><div class="tw"><table class="tbl"><thead><tr><th>Form or format</th>${p.kind === "guide" ? "<th>Filed with or kept at</th>" : ""}<th>Purpose</th><th>Deadline</th>${p.kind === "guide" ? "<th>Late filing or fee note</th>" : ""}</tr></thead><tbody>${p.forms.map(f => `<tr><td>${linkForms(f.form)}</td>${p.kind === "guide" ? `<td>${esc(f.filed)}</td>` : ""}<td>${esc(f.purpose)}</td><td>${esc(f.deadline)}</td>${p.kind === "guide" ? `<td>${esc(f.late)}</td>` : ""}</tr>`).join("")}</tbody></table></div>` : ""}
+      ${p.docs.length ? `<h2>Documents to prepare or collect</h2>${ckHTML("procdocs-" + p.id, p.docs)}` : ""}`;
+  } else {
+    const F = lbGet();
+    if (p.kind === "pack" && lbDraftCount(p)) {
+      body = `<p class="note">Fill the company details once. Every draft below updates at once, and your entries are kept on this device for the next pack. Blanks in [square brackets] are for you to complete.</p>
+        <div class="lb-form">${LBF.map(k => `<label>${esc(LBL[k])}<input data-f="${k}" value="${esc(F[k] || "")}"${k === "date" || k === "ndate" ? ' placeholder="for example 12 March 2027"' : ""}></label>`).join("")}</div>
+        <p class="lb-act"><button type="button" class="lb-btn pri" id="lbw">Download all drafts for Word</button><span class="small" id="lbc"></span></p><div id="lbd"></div>`;
+    } else {
+      body = `${(p.rs || []).length && S.idx.res ? `<h2>Model resolutions</h2><details class="rl big"><summary>Show all ${p.rs.reduce((a, g) => a + g.r.length, 0)} resolutions for this process</summary>${p.rs.map(g => `<h3>${esc(g.t)}</h3><ul class="ll">${g.r.map(r => `<li><a href="#/resolutions/${esc(r[0])}">${esc(r[1])}</a></li>`).join("")}</ul>`).join("")}</details>` : ""}
+        ${(p.drafts || []).length ? `<h2>Drafts for this process</h2><ul class="ll">${p.drafts.map(d => `<li><a href="drafts/#${esc(d.id)}">${esc(d.title)}</a> <span class="muted small">${esc(d.category)}</span></li>`).join("")}</ul>` : `<p class="small">No draft in the Drafts library matches this process yet. Many resolutions and letters are in the <a href="generators/">Document generators</a>.</p>`}
+        <p class="small">The <a href="generators/">Document generators</a> build notices, minutes, letters and agreements for the company.</p>`;
+    }
+  }
+  show(`<section class="pg proc-pg proc lb">${head}<p class="lb-meta"><span class="lb-tag ${p.kind}">${p.kind === "pack" ? "Pack" : "Guide"} · ${esc(p.group)}</span></p><h1 tabindex="-1">${esc(p.title)}</h1>
+    <nav class="lb-tabs" aria-label="Sections of this process">${LBT.map(t => `<a href="#/processes/${esc(p.id)}/${t[0]}" class="${t[0] === tab ? "on" : ""}">${t[1]}</a>`).join("")}</nav>
+    ${body}
+    <p class="small noprint lb-nav">${i > 0 ? `<a href="#/processes/${esc(P[i - 1].id)}">← ${esc(P[i - 1].title)}</a>` : ""}${i < P.length - 1 ? `<a href="#/processes/${esc(P[i + 1].id)}">${esc(P[i + 1].title)} →</a>` : ""}</p>
+    <p class="note">A working guide written from the Act and the Rules, not legal advice. Check time limits and fees against the current Rules and MCA notifications before filing.</p>
     <p class="small noprint"><a href="#/processes">All processes</a> · <button type="button" class="linkbtn" onclick="window.print()">Print or save as PDF</button></p></section>`);
-  $$(".ck").forEach(ckCount); window.scrollTo(0, 0); $("h1").focus({ preventScroll: true });
+  if (tab === "drafts" && p.kind === "pack" && lbDraftCount(p)) {
+    const F = lbGet(); let sel = 0;
+    const draw = () => {
+      const D = lbDrafts(p, F); if (sel >= D.length) sel = 0;
+      $("#lbd").innerHTML = `<div class="lb-pane"><div class="lb-list">${D.map((d, k) => `<button type="button" data-i="${k}" class="${k === sel ? "on" : ""}">${esc(d.title)}</button>`).join("")}</div><div class="lb-doc"><h2>${esc(D[sel].title)}</h2><pre>${esc(D[sel].text)}</pre><p class="lb-act"><button type="button" class="lb-btn" id="lbcp">Copy text</button><button type="button" class="lb-btn" id="lbw1">Download this draft</button></p></div></div>`;
+      $$("#lbd .lb-list button").forEach(b => b.addEventListener("click", () => { sel = +b.dataset.i; draw(); }));
+      $("#lbcp").addEventListener("click", async () => { toast(await copyText(D[sel].text) ? "Draft copied" : "Could not copy"); });
+      $("#lbw1").addEventListener("click", () => { lbWord(D[sel].title + " - " + (F.co || p.title), [D[sel]]); toast("Word file downloaded"); });
+      $("#lbw").onclick = () => { lbWord(p.title, D); toast("Word file downloaded"); };
+    };
+    $$(".lb-form input").forEach(inp => inp.addEventListener("input", () => { F[inp.dataset.f] = inp.value; store.set("cl_fields", JSON.stringify(F)); draw(); }));
+    draw();
+  }
+  $$(".ck").forEach(ckCount); if (S.lastProc !== id) window.scrollTo(0, 0); S.lastProc = id; $("h1").focus({ preventScroll: true });
 }
 
 /* ---------- compliance and date calculator ---------- */
