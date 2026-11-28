@@ -109,8 +109,23 @@ def title_ok(title, kind):
     return len(t) <= 100 and "\n" not in t and ". " not in t and not STOP.search(t)
 
 
+# PDFs that are not Rules (a casebook, the listing regulations, the model resolutions): they have their own pages
+NOT_RULES = ("company law", "lodr", "resolution")
+FOOTER_RE = re.compile(
+    r"Access complete Bare Act here\.[\s\S]{0,900}?Follow for daily updates:?(?:\s+(?:Facebook|LinkedIn|Telegram|X|WhatsApp|YouTube))+")
+
+
+MENU_RUN_RE = re.compile(
+    r"(?:^[ \t]*(?:Join WhatsApp Channel|Subscribe [Nn]ow|Dashboard/OnePage|Case Laws Portal|Bare Acts/Legal Contents|IBC Commentary|"
+    r"Arbitration Portal|Case Citation|Weekly Bulletins|Articles|e-Journals|Annual Case Digest|Testimonials|Notifications & Circulars|"
+    r"Bare Acts|Follow for daily updates:?|Facebook|LinkedIn|Telegram|X|WhatsApp|YouTube)[ \t]*(?:\n|\Z)(?:[ \t]*\n)*){3,}", re.MULTILINE)
+
+
+SOCIAL_RUN_RE = re.compile(r"(?:^[ \t]*(?:Facebook|LinkedIn|Telegram|X|WhatsApp|YouTube|Twitter|Instagram)[ \t]*(?:\n|\Z)(?:[ \t]*\n)*){2,}", re.MULTILINE)
+
+
 def clean(text):
-    text = FURNITURE_RE.sub("", text.replace("\r", ""))
+    text = SOCIAL_RUN_RE.sub("", FURNITURE_RE.sub("", MENU_RUN_RE.sub("", FOOTER_RE.sub("", text.replace("\r", "")))))
     return NAMELY_RE.sub(r"\1\n", text)
 
 
@@ -259,7 +274,7 @@ def main():
     Path("data").mkdir(exist_ok=True)
     sp = Path("data/sections.json")
     valid = {s["section"] for s in json.loads(sp.read_text(encoding="utf-8"))} if sp.exists() else set()
-    files = sorted(Path("data/raw/rules").rglob("*.txt"))
+    files = sorted(f for f in Path("data/raw/rules").rglob("*.txt") if not f.stem.lower().startswith(NOT_RULES))
 
     docs = []
     for f in files:
