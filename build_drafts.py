@@ -340,10 +340,11 @@ PAGE = r'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Drafts library | Compliance Lab</title>
+<script>if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add("emb")</script>
 <meta name="description" content="All drafts with their original wording. Search, read, copy or download the original Word file.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#e9eef5;--page:#ffffff;--ink:#101a2b;--muted:#4b5a70;--rule:#c9d3e1;
@@ -487,16 +488,49 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 .08em}
 .intro h1{color:var(--tape)}
 :root[data-theme=dark] .intro h1{color:var(--ink)}
 @media (max-width:860px){.ddm{position:static;margin:.3rem 0 .2rem;min-width:0}.dd{width:100%}}
+/* ===== unified header and embed mode (v3) ===== */
+:root{--paper:#eef1f6;--page:#ffffff;--ink:#142033;--muted:#566377;--rule:#d6dde8;--tape:#17376a;--link:#1d4f9f;--mark:#ffe9a8;--bar:#10264a;--barink:#eaf0fa;--gold:#c9a24a;--soft:#e7edf6;--sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif}
+:root[data-theme=sepia]{--paper:#e8dfc8;--page:#f8f2e0;--ink:#2a2418;--muted:#655a42;--rule:#d2c6a4;--tape:#6b4313;--link:#6b3a0b;--mark:#f5d87a;--bar:#3a2a14;--barink:#f6eedb;--gold:#d2a64a;--soft:#efe6cc}
+:root[data-theme=dark]{--paper:#0b1220;--page:#131d31;--ink:#e6edf8;--muted:#9aabc4;--rule:#26344f;--tape:#8fb4ff;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e6edf8;--gold:#e0b84f;--soft:#1a2740;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root[data-theme=auto]{--paper:#0b1220;--page:#131d31;--ink:#e6edf8;--muted:#9aabc4;--rule:#26344f;--tape:#8fb4ff;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e6edf8;--gold:#e0b84f;--soft:#1a2740;color-scheme:dark}}
+.bar{position:sticky;top:0;z-index:30;background:var(--bar);border-bottom:3px solid var(--gold)}
+.bar-in{max-width:1320px;margin:auto;padding:.5rem 1.25rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:.6rem;font:700 1.1rem/1 var(--sans);color:var(--barink);text-decoration:none;white-space:nowrap;letter-spacing:0}
+.brand .mk{display:grid;place-items:center;width:1.85rem;height:1.85rem;border-radius:6px;background:var(--gold);color:#10264a;font:700 1.1rem var(--sans)}
+.mainnav{display:flex;gap:.15rem}
+.mainnav a{color:var(--barink);opacity:.85;text-decoration:none;font:600 .95rem var(--sans);padding:.5rem .85rem;border-radius:6px;border:0}
+.mainnav a:hover{opacity:1;background:rgba(255,255,255,.1)}
+.mainnav a[aria-current=page]{opacity:1;background:rgba(255,255,255,.16)}
+.hs{margin-left:auto;display:flex;align-items:center;gap:.6rem;min-width:0;width:min(24rem,36vw);padding:.5rem .8rem;border-radius:7px;background:rgba(255,255,255,.12);color:var(--barink);text-decoration:none;font:500 .92rem var(--sans);white-space:nowrap;overflow:hidden}
+.hs:hover{background:rgba(255,255,255,.2)}
+.hs kbd{margin-left:auto;font:600 .75rem var(--sans);border:1px solid rgba(255,255,255,.35);border-radius:4px;padding:0 .35rem}
+.themes{display:flex;gap:.4rem;margin:0}
+.sw{width:1.1rem;height:1.1rem;border-radius:50%;border:1px solid rgba(255,255,255,.55);cursor:pointer;padding:0;background:var(--c)}
+.sw[aria-pressed=true]{outline:2px solid var(--gold);outline-offset:2px}
+.sw[data-t=light]{--c:#fff}.sw[data-t=sepia]{--c:#f3ecd7}.sw[data-t=dark]{--c:#0b1220}
+.sub{background:var(--page);border-bottom:1px solid var(--rule)}
+.sub-in{max-width:1320px;margin:auto;padding:0 1.25rem;display:flex;gap:.2rem;overflow-x:auto}
+.sub a{padding:.7rem .9rem;font:600 .92rem var(--sans);color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-1px}
+.sub a:hover{color:var(--ink)}
+.sub a[aria-current=page]{color:var(--tape);border-bottom-color:var(--tape)}
+:root[data-theme=dark] .sub a[aria-current=page]{color:var(--ink);border-bottom-color:var(--gold)}
+@media (max-width:760px){.hs span{display:none}.hs{width:auto;padding:.5rem .65rem}.hs kbd{display:none}.themes{display:none}.bar-in{gap:.6rem;padding:.45rem .8rem}}
+html.emb .bar .brand,html.emb .bar .mainnav,html.emb .bar .hs,html.emb .bar .themes,html.emb .bar .tools,html.emb .bar .back,html.emb .sub,html.emb footer{display:none!important}
+html.emb .bar{position:static;background:transparent;border:0}
+html.emb .bar-in{padding:.4rem 1rem 0}
+html.emb .bar .find{max-width:none;flex:1}
+html.emb .bar .field{border:1px solid var(--rule)}
+html.emb main{padding-top:.6rem}
+html.emb body{background:transparent;min-height:0}
+
+.bar .find{flex:1;max-width:30rem}.bar .field{background:var(--page);border:1px solid transparent;border-radius:7px}.tools{display:flex;gap:.3rem;align-items:center}.tools button{color:var(--barink)}
+@media (max-width:860px){.bar-in{flex-wrap:wrap}.bar .find{order:5;flex:1 1 100%;max-width:none}}
 </style>
 </head>
 <body>
 <header class="bar"><div class="bar-in">
-  <a class="brand" href="../">Compliance Lab</a>
-  <nav aria-label="Sections"><a href="../">Home</a>
-    <details class="dd"><summary>Law</summary><div class="ddm"><a href="../#/act">Companies Act, 2013</a><a href="../#/lodr">SEBI LODR, 2015</a><a href="../#/cases">Case laws</a></div></details>
-    <details class="dd on"><summary>Practice</summary><div class="ddm"><a href="../#/forms">Forms and checklists</a><a href="../#/processes">Processes</a><a href="../#/resolutions">Model resolutions</a><a href="./" aria-current="page">Drafts library</a></div></details>
-    <details class="dd"><summary>Tools</summary><div class="ddm"><a href="../generators/">Document generators</a><a href="../excel/">Excel utilities</a><a href="../calendar/">Compliance calendar</a><a href="../stamp/">Stamp duty</a><a href="../#/tools">Calculator</a><a href="../#/me">My workspace</a></div></details>
-  </nav>
+  <a class="brand" href="../"><span class="mk">&sect;</span>Compliance Lab</a>
+  <nav class="mainnav" aria-label="Main sections"><a href="../#/library">Library</a><a href="../#/work" aria-current="page">Workspace</a><a href="../#/tools">Tools</a></nav>
   <div class="find"><div class="field"><span class="sym" aria-hidden="true">&sect;</span>
     <input id="q" type="search" placeholder="Search drafts by name or any words inside" autocomplete="off" spellcheck="false" aria-label="Search drafts"></div></div>
   <div class="tools" role="group" aria-label="Reading settings">
@@ -507,6 +541,7 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 .08em}
     <button class="sw" data-t="dark" aria-label="Dark page" title="Dark page" aria-pressed="false"></button>
   </div>
 </div></header>
+<div class="sub"><nav class="sub-in" aria-label="Workspace"><a href="../#/work">Start</a><a href="../#/work/processes">Processes</a><a href="../#/work/resolutions">Resolutions</a><a href="../#/work/drafts" aria-current="page">Drafts</a><a href="../#/work/generators">Generators</a><a href="../#/work/forms">E-forms</a></nav></div>
 <main class="wrap">
   <nav class="lp" aria-label="Drafts"><div class="pick"><label for="gsel">Choose a heading</label><select id="gsel"></select></div><p class="cnt" id="cnt"></p><div id="list"></div></nav>
   <section class="rp" id="rp"></section>
@@ -640,7 +675,7 @@ window.addEventListener("hashchange", route);
 })();
 })();
 </script>
-</body>
+<script>if(window.parent!==window){var __s=function(){parent.postMessage({cl_h:document.body.offsetHeight+16},"*")};document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(a&&/^\.\.\//.test(a.getAttribute("href")||""))a.target="_top"},true);if(window.ResizeObserver)new ResizeObserver(__s).observe(document.body);addEventListener("load",__s);setInterval(__s,800)}</script></body>
 </html>
 '''
 
