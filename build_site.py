@@ -337,8 +337,9 @@ def main():
                 f_ = forms_in(text)
                 if f_:
                     rule_forms[r["id"]] = f_
-            body[r["rule"]] = {"t": title, "st": r["status"], "paras": paras, "notes": notes}
-        dump(OUT / "data" / "r" / f"{k}.json", {"name": rs["name"], "rules": body})
+            body[r["rule"]] = {"t": title, "st": r["status"], "paras": paras, "notes": notes,
+                               "c": [c["section"] for c in r.get("cites", []) if c.get("confidence") != "low"][:14]}
+        dump(OUT / "data" / "r" / f"{k}.json", {"name": rs["name"], "en": rs.get("enabling_sections", []), "rules": body})
         ai_file = DATA / "ai" / "r" / f"{rs['id']}.json"
         has_ai = False
         if ai_file.exists():
@@ -347,7 +348,7 @@ def main():
                 (OUT / "data" / "ai" / "r").mkdir(parents=True, exist_ok=True)
                 dump(OUT / "data" / "ai" / "r" / f"{k}.json", ai_rules)
                 has_ai = True
-        set_index.append({"k": k, "name": rs["name"], "n": rs["rule_count"], "ai": has_ai})
+        set_index.append({"k": k, "name": rs["name"], "n": rs["rule_count"], "ai": has_ai, "en": rs.get("enabling_sections", [])})
 
     # ----- sections -----
     order = [s["section"] for s in sections]
