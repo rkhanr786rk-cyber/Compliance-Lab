@@ -3,6 +3,7 @@
   site/generators/index.html : document generators (fill in a form, download an editable Word file; all in the browser)
   site/excel/                : Excel utilities (registers, trackers and planners as .xlsx files) and their listing page
 Needs the openpyxl library (installed by the workflow). Nothing here reads the Act; it only writes tools."""
+import json
 import re
 import sys
 from datetime import date
@@ -89,6 +90,41 @@ footer{max-width:76rem;margin:0 auto;padding:1rem 1.5rem 3rem;color:var(--muted)
 .ddm a:hover,.ddm a[aria-current=page]{background:rgba(255,255,255,.1)}
 @media (max-width:700px){.ddm{position:static;margin:.3rem 0 .2rem;min-width:0}.bar nav{gap:.8rem}.dd{width:100%}}
 .pick{max-width:30rem;margin:1rem 0 1.4rem}.pick select{font-size:1.05rem;padding:.6rem .7rem}
+
+/* ===== unified header and embed mode (v3) ===== */
+:root{--paper:#eef1f6;--page:#ffffff;--ink:#142033;--muted:#566377;--rule:#d6dde8;--tape:#17376a;--link:#1d4f9f;--mark:#ffe9a8;--bar:#10264a;--barink:#eaf0fa;--gold:#c9a24a;--soft:#e7edf6;--sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif}
+:root[data-theme=sepia]{--paper:#e8dfc8;--page:#f8f2e0;--ink:#2a2418;--muted:#655a42;--rule:#d2c6a4;--tape:#6b4313;--link:#6b3a0b;--mark:#f5d87a;--bar:#3a2a14;--barink:#f6eedb;--gold:#d2a64a;--soft:#efe6cc}
+:root[data-theme=dark]{--paper:#0b1220;--page:#131d31;--ink:#e6edf8;--muted:#9aabc4;--rule:#26344f;--tape:#8fb4ff;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e6edf8;--gold:#e0b84f;--soft:#1a2740;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root[data-theme=auto]{--paper:#0b1220;--page:#131d31;--ink:#e6edf8;--muted:#9aabc4;--rule:#26344f;--tape:#8fb4ff;--link:#8fb4ff;--mark:#4d4310;--bar:#070d19;--barink:#e6edf8;--gold:#e0b84f;--soft:#1a2740;color-scheme:dark}}
+.bar{position:sticky;top:0;z-index:30;background:var(--bar);border-bottom:3px solid var(--gold)}
+.bar-in{max-width:1320px;margin:auto;padding:.5rem 1.25rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:.6rem;font:700 1.1rem/1 var(--sans);color:var(--barink);text-decoration:none;white-space:nowrap;letter-spacing:0}
+.brand .mk{display:grid;place-items:center;width:1.85rem;height:1.85rem;border-radius:6px;background:var(--gold);color:#10264a;font:700 1.1rem var(--sans)}
+.mainnav{display:flex;gap:.15rem}
+.mainnav a{color:var(--barink);opacity:.85;text-decoration:none;font:600 .95rem var(--sans);padding:.5rem .85rem;border-radius:6px;border:0}
+.mainnav a:hover{opacity:1;background:rgba(255,255,255,.1)}
+.mainnav a[aria-current=page]{opacity:1;background:rgba(255,255,255,.16)}
+.hs{margin-left:auto;display:flex;align-items:center;gap:.6rem;min-width:0;width:min(24rem,36vw);padding:.5rem .8rem;border-radius:7px;background:rgba(255,255,255,.12);color:var(--barink);text-decoration:none;font:500 .92rem var(--sans);white-space:nowrap;overflow:hidden}
+.hs:hover{background:rgba(255,255,255,.2)}
+.hs kbd{margin-left:auto;font:600 .75rem var(--sans);border:1px solid rgba(255,255,255,.35);border-radius:4px;padding:0 .35rem}
+.themes{display:flex;gap:.4rem;margin:0}
+.sw{width:1.1rem;height:1.1rem;border-radius:50%;border:1px solid rgba(255,255,255,.55);cursor:pointer;padding:0;background:var(--c)}
+.sw[aria-pressed=true]{outline:2px solid var(--gold);outline-offset:2px}
+.sw[data-t=light]{--c:#fff}.sw[data-t=sepia]{--c:#f3ecd7}.sw[data-t=dark]{--c:#0b1220}
+.sub{background:var(--page);border-bottom:1px solid var(--rule)}
+.sub-in{max-width:1320px;margin:auto;padding:0 1.25rem;display:flex;gap:.2rem;overflow-x:auto}
+.sub a{padding:.7rem .9rem;font:600 .92rem var(--sans);color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-1px}
+.sub a:hover{color:var(--ink)}
+.sub a[aria-current=page]{color:var(--tape);border-bottom-color:var(--tape)}
+:root[data-theme=dark] .sub a[aria-current=page]{color:var(--ink);border-bottom-color:var(--gold)}
+@media (max-width:760px){.hs span{display:none}.hs{width:auto;padding:.5rem .65rem}.hs kbd{display:none}.themes{display:none}.bar-in{gap:.6rem;padding:.45rem .8rem}}
+html.emb .bar .brand,html.emb .bar .mainnav,html.emb .bar .hs,html.emb .bar .themes,html.emb .bar .tools,html.emb .bar .back,html.emb .sub,html.emb footer{display:none!important}
+html.emb .bar{position:static;background:transparent;border:0}
+html.emb .bar-in{padding:.4rem 1rem 0}
+html.emb .bar .find{max-width:none;flex:1}
+html.emb .bar .field{border:1px solid var(--rule)}
+html.emb main{padding-top:.6rem}
+html.emb body{background:transparent;min-height:0}
 """
 GEN_JS = r""""use strict";
 /* ---------- small helpers ---------- */
@@ -1887,27 +1923,34 @@ window.addEventListener("hashchange", route);
 route();
 """
 
-FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">'
+FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">'
+
+
+AREAS = {
+    "work": [("../#/work", "Start", ""), ("../#/work/processes", "Processes", ""), ("../#/work/resolutions", "Resolutions", ""),
+             ("../#/work/drafts", "Drafts", ""), ("../#/work/generators", "Generators", "gen"), ("../#/work/forms", "E-forms", "")],
+    "tools": [("../#/tools", "All tools", ""), ("../calendar/", "Compliance calendar", "cal"), ("../excel/", "Excel utilities", "xl"),
+              ("../stamp/", "Stamp duty", "stamp"), ("../#/tools/calculator", "Date calculator", "")],
+}
+EMB_HEAD = r'''<script>if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add("emb")</script>'''
+EMB_TAIL = r'''<script>if(window.parent!==window){var __s=function(){parent.postMessage({cl_h:document.body.offsetHeight+16},"*")};document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(a&&/^\.\.\//.test(a.getAttribute("href")||""))a.target="_top"},true);if(window.ResizeObserver)new ResizeObserver(__s).observe(document.body);addEventListener("load",__s);setInterval(__s,800)}</script>'''
 
 
 def shell(title, desc, active, body, script=""):
-    groups = [("Law", [("../#/act", "Companies Act, 2013", ""), ("../#/lodr", "SEBI LODR, 2015", ""), ("../#/cases", "Case laws", "")]),
-              ("Practice", [("../#/forms", "Forms and checklists", ""), ("../#/processes", "Processes", ""), ("../#/resolutions", "Model resolutions", ""), ("../drafts/", "Drafts library", "")]),
-              ("Tools", [("../generators/", "Document generators", "gen"), ("../excel/", "Excel utilities", "xl"), ("../calendar/", "Compliance calendar", "cal"), ("../stamp/", "Stamp duty", "stamp"), ("../#/tools", "Calculator", ""), ("../#/me", "My workspace", ""), ("../sources/", "Sources and checks", "src")])]
+    area = "work" if active == "gen" else "tools"
     cur = ' aria-current="page"'
-    links = '<a href="../">Home</a>'
-    for gn, items in groups:
-        on = any(k and k == active for _, _, k in items)
-        links += '<details class="dd%s"><summary>%s</summary><div class="ddm">%s</div></details>' % (" on" if on else "", gn, "".join('<a href="%s"%s>%s</a>' % (h, cur if (k and k == active) else "", t) for h, t, k in items))
+    nav = "".join('<a href="%s"%s>%s</a>' % (h, cur if k and k == active else "", t) for h, t, k in AREAS[area])
+    main_nav = '<a href="../#/library">Library</a><a href="../#/work"%s>Workspace</a><a href="../#/tools"%s>Tools</a>' % (cur if area == "work" else "", cur if area == "tools" else "")
     return f"""<!doctype html>
 <html lang="en" data-theme="auto"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><meta name="description" content="{desc}">{FONTS}<style>{CSS}</style></head>
-<body><header class="bar"><div class="bar-in"><a class="brand" href="../">Compliance Lab</a><nav aria-label="Sections">{links}</nav>
+<title>{title}</title><meta name="description" content="{desc}">{EMB_HEAD}{FONTS}<style>{CSS}</style></head>
+<body><header class="bar"><div class="bar-in"><a class="brand" href="../"><span class="mk">&sect;</span>Compliance Lab</a><nav class="mainnav" aria-label="Main sections">{main_nav}</nav>
+<a class="hs" href="../#/search"><span>Search the Act, rules, cases and drafts</span><kbd>/</kbd></a>
 <div class="themes" role="group" aria-label="Colour theme"><button class="sw" data-t="light" aria-label="Light" aria-pressed="false"></button><button class="sw" data-t="sepia" aria-label="Cream" aria-pressed="false"></button><button class="sw" data-t="dark" aria-label="Dark" aria-pressed="false"></button></div></div></header>
+<div class="sub"><nav class="sub-in" aria-label="Section menu">{nav}</nav></div>
 <main>{body}</main>
 <footer>For study only. These tools make starting drafts and working files from the Act and the Rules. They are not legal advice: check every output against the current law before you rely on it.</footer>
-<script>document.addEventListener("click",function(e){{document.querySelectorAll(".dd[open]").forEach(function(d){{if(!d.contains(e.target))d.removeAttribute("open")}})}});document.addEventListener("keydown",function(e){{if(e.key==="Escape")document.querySelectorAll(".dd[open]").forEach(function(d){{d.removeAttribute("open")}})}});</script>
-<script>{script}</script></body></html>"""
+<script>{script}</script>{EMB_TAIL}</body></html>"""
 
 
 def build_generators():
@@ -1915,7 +1958,12 @@ def build_generators():
     out.mkdir(parents=True, exist_ok=True)
     body = '<div id="list"></div><div id="work" hidden></div>'
     (out / "index.html").write_text(shell("Document generators | Compliance Lab", "Fill in a form and download an editable Word file: Board resolutions, notices, minutes, letter of authority and share certificate.", "gen", body, GEN_JS), encoding="utf-8")
-    print("Document generators page written")
+    items = []
+    for m in re.finditer(r'\bid:\s*"([a-z0-9_-]+)",\s*group:\s*"([^"]*)",\s*title:\s*"((?:[^"\\]|\\.)*)",\s*short:\s*"((?:[^"\\]|\\.)*)"', GEN_JS):
+        items.append({"id": m.group(1), "g": m.group(2), "t": json.loads('"' + m.group(3) + '"'), "d": json.loads('"' + m.group(4) + '"')})
+    (SITE / "data" / "gen").mkdir(parents=True, exist_ok=True)
+    (SITE / "data" / "gen" / "index.json").write_text(json.dumps(items, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"Document generators page written ({len(items)} documents indexed)")
 
 
 CAL_JS = r"""
@@ -3493,7 +3541,7 @@ sel.onchange=function(){show(sel.value);history.replaceState(null,"",sel.value?"
 
 
 if __name__ == "__main__":
-    for step in (build_generators, build_calendar, build_stamp, build_sources, build_excel):
+    for step in (build_generators, build_calendar, build_stamp, build_excel):
         try:
             step()
         except Exception as e:
