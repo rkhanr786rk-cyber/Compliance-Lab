@@ -326,59 +326,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "68"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#2",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "2",
-    "title": "In these regulations, unless the context otherwise requires",
-    "mentions": 10,
-    "confidence": "high",
-    "subs": [
-     "6",
-     "41",
-     "44",
-     "46",
-     "48",
-     "51",
-     "57",
-     "76",
-     "77",
-     "87"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#22",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "22",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "45"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#62L",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62L",
-    "title": "At least one independent director, on the board of directors of the HVDLE, shall be a director on the board of directors of an unlisted material subsidiary, whether incorporated in India or not. Explanation",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "45"
-    ]
-   },
-   {
     "rule_id": "the-companies-appointment-and-qualification-of-directors-rules-2014-20261106-143017#2",
     "rule_set": "Companies (Appointment and Qualification of Directors) Rules, 2014",
     "rule": "2",
@@ -458,19 +405,6 @@
     "confidence": "medium",
     "subs": [
      "1"
-    ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 6,
-    "confidence": "medium",
-    "subs": [
-     "68",
-     "4",
-     "90"
     ]
    },
    {
@@ -595,15 +529,6 @@
   ],
   "3": [
    {
-    "rule_id": "LODR, 2015#2",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "2",
-    "title": "In these regulations, unless the context otherwise requires",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-acceptance-of-deposits-rules-2014-20261106-142547#2",
     "rule_set": "Companies (Acceptance of Deposits) Rules, 2014",
     "rule": "2",
@@ -656,15 +581,6 @@
     "rule": "10",
     "title": "Authentication of translated documents",
     "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
     "confidence": "medium",
     "subs": []
    },
@@ -1030,15 +946,6 @@
     ]
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-authorised-to-register-rules-2014-20261107-081607#2",
     "rule_set": "Companies (Authorised to Registered) Rules, 2014",
     "rule": "2",
@@ -1241,18 +1148,6 @@
   ],
   "5": [
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "21",
-     "20"
-    ]
-   },
-   {
     "rule_id": "the-iepf-accounting-audit-transfer-and-refund-rules-2016-20261106-142648#6",
     "rule_set": "Investor Education and Protection Fund Authority (Accounting, Audit, Transfer and Refund) Rules, 2016",
     "rule": "6",
@@ -1443,17 +1338,6 @@
     "confidence": "medium",
     "subs": [
      "1"
-    ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "3"
     ]
    },
    {
@@ -1708,15 +1592,6 @@
     "rule": "8",
     "title": "Fees not to be paid",
     "mentions": 2,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
     "confidence": "medium",
     "subs": []
    },
@@ -2137,33 +2012,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 9,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#22",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "22",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62L",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62L",
-    "title": "At least one independent director, on the board of directors of the HVDLE, shall be a director on the board of directors of an unlisted material subsidiary, whether incorporated in India or not. Explanation",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#21",
     "rule_set": "Companies (Incorporation) Rules, 2014",
     "rule": "21",
@@ -2398,15 +2246,6 @@
     "mentions": 2,
     "confidence": "medium",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
    }
   ],
   "10": [
@@ -2418,18 +2257,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "1",
-     "3"
-    ]
    }
   ],
   "10A": [
@@ -2453,15 +2280,6 @@
    }
   ],
   "11": [
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#1",
     "rule_set": "Companies (Incorporation) Rules, 2014",
@@ -2632,114 +2450,6 @@
     "mentions": 0,
     "confidence": "low",
     "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#4",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "4",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#6",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "6",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#7",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "7",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#8",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "8",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#18",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "18",
-    "title": "Every listed entity shall constitute a qualified and independent audit committee in accordance with the terms of reference, subject to the following: (a) The audit committee shall have minimum three directors as members. (b) 176[At least] two-thirds of the members of audit committee shall be independent directors 177[and in case of a listed entity having outstanding SR equity shares, the audit committee shall only comprise of independent directors]. (c) All members of audit committee shall be financially literate and at least one member shall have accounting or related financial management expertise. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#47",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "47",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#56",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "56",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62E",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62E",
-    "title": "The directors of HVDLE shall comply with the following conditions with respect to the maximum number of directorships, including any alternate directorships held by them at any point of time - (a) A person may act as a director in not more than seven listed entities: Provided that a person may serve as an independent director in not more than seven listed entities. (b) Notwithstanding the above, any person who is serving as a whole time director/ managing director in any listed entity may serve as an independent director in not more than three listed entities. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62F",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62F",
-    "title": "Every HVDLE shall constitute an audit committee subject to the following terms of reference: (a) The audit committee shall have minimum three directors as members. (b) At least two-thirds of the members of audit committee shall be independent directors. (c) All members of audit committee shall be financially literate and at least one member shall have accounting or related financial management expertise. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64E",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64E",
-    "title": "Approval from the holders and No-Objection Letter from the Debenture Trustee",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64F",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64F",
-    "title": "Failure of delisting proposal",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64H",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64H",
-    "title": "Delisting from some of the stock exchanges",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
    }
   ],
   "12": [
@@ -2783,19 +2493,6 @@
     "confidence": "high",
     "subs": [
      "2"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 10,
-    "confidence": "high",
-    "subs": [
-     "1",
-     "3",
-     "5"
     ]
    },
    {
@@ -3023,18 +2720,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 11,
-    "confidence": "high",
-    "subs": [
-     "4",
-     "2"
-    ]
-   },
-   {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#30",
     "rule_set": "Companies (Incorporation) Rules, 2014",
     "rule": "30",
@@ -3250,15 +2935,6 @@
     "subs": []
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "nclt-rules-2016-20261107-081709#68",
     "rule_set": "National Company Law Tribunal Rules, 2016",
     "rule": "68",
@@ -3268,15 +2944,6 @@
     "subs": [
      "1"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 7,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#41",
@@ -3477,24 +3144,6 @@
   ],
   "17": [
    {
-    "rule_id": "LODR, 2015#9",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "9",
-    "title": "",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62C",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62C",
-    "title": "The provisions of this chapter shall apply to a listed entity which only has non-convertible debt securities listed, with an outstanding value of Rupees 571[Five] Thousand Crore and above and does not have any listed specified securities. Explanation (1)",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#1",
     "rule_set": "Companies (Incorporation) Rules, 2014",
     "rule": "1",
@@ -3693,15 +3342,6 @@
     "mentions": 2,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 5,
-    "confidence": "medium",
-    "subs": []
    }
   ],
   "20": [
@@ -3796,17 +3436,6 @@
     "mentions": 1,
     "confidence": "medium",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-producer-companies-rules-2021-20261107-081633#5",
@@ -4002,35 +3631,6 @@
     ]
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#9",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "9",
-    "title": "",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62C",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62C",
-    "title": "The provisions of this chapter shall apply to a listed entity which only has non-convertible debt securities listed, with an outstanding value of Rupees 571[Five] Thousand Crore and above and does not have any listed specified securities. Explanation (1)",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
     "rule_id": "companies-listing-of-equity-shares-in-permissible-jurisdictions-rules-2024-20261106-142516#3",
     "rule_set": "Companies (Listing of equity instruments in permissible jurisdictions) Rules, 2024",
     "rule": "3",
@@ -4049,20 +3649,6 @@
     "mentions": 1,
     "confidence": "medium",
     "subs": []
-   }
-  ],
-  "25": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 6,
-    "confidence": "medium",
-    "subs": [
-     "2",
-     "1"
-    ]
    }
   ],
   "26": [
@@ -4365,116 +3951,6 @@
     "rule_set": "Companies (Prospectus and Allotment of Securities) Rules, 2014",
     "rule": "13",
     "title": "Payment of commission",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   }
-  ],
-  "30": [
-   {
-    "rule_id": "LODR, 2015#4",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "4",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#6",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "6",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#7",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "7",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#8",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "8",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#18",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "18",
-    "title": "Every listed entity shall constitute a qualified and independent audit committee in accordance with the terms of reference, subject to the following: (a) The audit committee shall have minimum three directors as members. (b) 176[At least] two-thirds of the members of audit committee shall be independent directors 177[and in case of a listed entity having outstanding SR equity shares, the audit committee shall only comprise of independent directors]. (c) All members of audit committee shall be financially literate and at least one member shall have accounting or related financial management expertise. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#47",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "47",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#56",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "56",
-    "title": "",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62E",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62E",
-    "title": "The directors of HVDLE shall comply with the following conditions with respect to the maximum number of directorships, including any alternate directorships held by them at any point of time - (a) A person may act as a director in not more than seven listed entities: Provided that a person may serve as an independent director in not more than seven listed entities. (b) Notwithstanding the above, any person who is serving as a whole time director/ managing director in any listed entity may serve as an independent director in not more than three listed entities. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62F",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62F",
-    "title": "Every HVDLE shall constitute an audit committee subject to the following terms of reference: (a) The audit committee shall have minimum three directors as members. (b) At least two-thirds of the members of audit committee shall be independent directors. (c) All members of audit committee shall be financially literate and at least one member shall have accounting or related financial management expertise. Explanation (1)",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64E",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64E",
-    "title": "Approval from the holders and No-Objection Letter from the Debenture Trustee",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64F",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64F",
-    "title": "Failure of delisting proposal",
-    "mentions": 0,
-    "confidence": "low",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#64H",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "64H",
-    "title": "Delisting from some of the stock exchanges",
     "mentions": 0,
     "confidence": "low",
     "subs": []
@@ -4816,15 +4292,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 12,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-prospectus-and-allotment-of-securities-rules-2014-20261106-142445#14",
     "rule_set": "Companies (Prospectus and Allotment of Securities) Rules, 2014",
     "rule": "14",
@@ -4985,15 +4452,6 @@
   ],
   "43": [
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#22",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "22",
@@ -5086,32 +4544,6 @@
     "subs": []
    }
   ],
-  "46": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
-   }
-  ],
-  "47": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
-   }
-  ],
   "48": [
    {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#9",
@@ -5121,17 +4553,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#22",
@@ -5155,19 +4576,6 @@
     ]
    }
   ],
-  "50": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "medium",
-    "subs": [
-     "2"
-    ]
-   }
-  ],
   "51": [
    {
     "rule_id": "the-companies-acceptance-of-deposits-rules-2014-20261106-142547#2",
@@ -5180,15 +4588,6 @@
    }
   ],
   "54": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#8",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
@@ -5283,27 +4682,9 @@
      "1",
      "3"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": []
    }
   ],
   "56": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#1",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
@@ -5412,33 +4793,7 @@
     ]
    }
   ],
-  "60": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 8,
-    "confidence": "medium",
-    "subs": [
-     "5",
-     "4",
-     "2"
-    ]
-   }
-  ],
   "61": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 9,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
    {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#15",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
@@ -5449,15 +4804,6 @@
     "subs": [
      "1"
     ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
    },
    {
     "rule_id": "nclt-rules-2016-20261107-081709#71",
@@ -5500,17 +4846,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 10,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-issue-of-global-depository-receipts-rules-2014-20261106-142451#4",
@@ -5662,17 +4997,6 @@
   ],
   "63": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
-   },
-   {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#1",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
     "rule": "1",
@@ -5756,15 +5080,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#1",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
     "rule": "1",
@@ -5837,56 +5152,7 @@
     "subs": []
    }
   ],
-  "65": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
-   }
-  ],
   "66": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
    {
     "rule_id": "nclt-procedure-for-reduction-of-share-capital-of-company-rules-2016-20261107-081729#2",
     "rule_set": "National Company Law Tribunal (Procedure for reduction of share capital of Company) Rules, 2016",
@@ -6046,15 +5312,6 @@
     ]
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#1",
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
     "rule": "1",
@@ -6127,28 +5384,6 @@
     "subs": []
    }
   ],
-  "69": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
-  "70": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
   "71": [
    {
     "rule_id": "nclt-rules-2016-20261107-081709#73",
@@ -6161,15 +5396,6 @@
      "9",
      "10"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-companies-share-capital-and-debentures-rules-2014-20261106-142528#18",
@@ -6425,18 +5651,6 @@
     "confidence": "high",
     "subs": [
      "4"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": [
-     "2",
-     "1"
     ]
    },
    {
@@ -6704,17 +5918,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-acceptance-of-deposits-rules-2014-20261106-142547#3",
@@ -7003,15 +6206,6 @@
     "subs": []
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-registration-of-charges-rules-2014-20261106-142604#1",
     "rule_set": "Companies (Registration of Charges) Rules, 2014",
     "rule": "1",
@@ -7065,15 +6259,6 @@
     "title": "Register of charges to be kept by the Registrar",
     "mentions": 1,
     "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
     "subs": []
    },
    {
@@ -7346,17 +6531,6 @@
     "subs": []
    }
   ],
-  "86": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
   "87": [
    {
     "rule_id": "the-companies-registration-of-charges-rules-2014-20261106-142604#13",
@@ -7377,17 +6551,6 @@
     "mentions": 1,
     "confidence": "medium",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-registration-of-charges-rules-2014-20261106-142604#1",
@@ -7441,15 +6604,6 @@
     "rule_set": "Companies (Issue of Global Depository Receipts) Rules, 2014",
     "rule": "9",
     "title": "Non applicability of certain provisions of the Act",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#10",
-    "rule_set": "Company Law",
-    "rule": "10",
-    "title": "",
     "mentions": 1,
     "confidence": "high",
     "subs": []
@@ -7678,15 +6832,6 @@
    }
   ],
   "89": [
-   {
-    "rule_id": "LODR, 2015#2",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "2",
-    "title": "In these regulations, unless the context otherwise requires",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#9",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
@@ -7966,15 +7111,6 @@
   ],
   "91": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#1",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "1",
@@ -8132,24 +7268,6 @@
     "subs": [
      "4"
     ]
-   },
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62",
-    "title": "The listed entity shall maintain a functional website containing the following information about the listed entity",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#8A",
@@ -8482,15 +7600,6 @@
   ],
   "94": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#14",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "14",
@@ -8659,24 +7768,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#22",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "22",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
    }
   ],
   "97": [
@@ -8842,15 +7933,6 @@
   ],
   "101": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#15",
     "rule_set": "Companies (Meetings of Board and its Powers) Rules, 2014",
     "rule": "15",
@@ -8995,37 +8077,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#9",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "9",
-    "title": "",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#62C",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62C",
-    "title": "The provisions of this chapter shall apply to a listed entity which only has non-convertible debt securities listed, with an outstanding value of Rupees 571[Five] Thousand Crore and above and does not have any listed specified securities. Explanation (1)",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#17",
@@ -9218,15 +8269,6 @@
    }
   ],
   "105": [
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#21",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
@@ -10218,15 +9260,6 @@
   ],
   "115": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#1",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "1",
@@ -10512,17 +9545,6 @@
     "subs": []
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": [
-     "10"
-    ]
-   },
-   {
     "rule_id": "the-companies-management-and-administration-rules-2014-20261106-142621#1",
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "1",
@@ -10783,15 +9805,6 @@
     "rule_set": "Companies (Management and Administration) Rules, 2014",
     "rule": "27",
     "title": "Maintenance and inspection of document in electronic form",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
     "mentions": 1,
     "confidence": "high",
     "subs": []
@@ -11106,15 +10119,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-declaration-and-payment-of-dividend-rules-2014-20261106-142638#1",
     "rule_set": "Companies (Declaration and Payment of Dividend) Rules, 2014",
     "rule": "1",
@@ -11153,15 +10157,6 @@
     "subs": [
      "6"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-iepf-accounting-audit-transfer-and-refund-rules-2016-20261106-142648#6",
@@ -11328,24 +10323,6 @@
     "subs": [
      "3"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-iepf-accounting-audit-transfer-and-refund-rules-2016-20261106-142648#7",
@@ -11527,17 +10504,6 @@
     "title": "Vacancies, etc., not to invalidate proceedings of Authority",
     "mentions": 0,
     "confidence": "low",
-    "subs": []
-   }
-  ],
-  "126": [
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
     "subs": []
    }
   ],
@@ -12251,35 +11217,6 @@
     "subs": []
    },
    {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#48",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "48",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": [
-     "6"
-    ]
-   },
-   {
     "rule_id": "the-companies-accounting-standards-rules-2021-20261106-142734#1",
     "rule_set": "Companies (Accounting Standards) Rules, 2021",
     "rule": "1",
@@ -12569,24 +11506,6 @@
     ]
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#12",
     "rule_set": "Companies (Accounts) Rules, 2014",
     "rule": "12",
@@ -12700,24 +11619,6 @@
    }
   ],
   "136": [
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#10",
     "rule_set": "Companies (Accounts) Rules, 2014",
@@ -13001,17 +11902,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 10,
-    "confidence": "high",
-    "subs": [
-     "6"
-    ]
    },
    {
     "rule_id": "the-companies-audit-and-auditors-rules-2014-20261106-142921#4",
@@ -13302,15 +12192,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-audit-and-auditors-rules-2014-20261106-142921#10",
     "rule_set": "Companies (Audit and Auditors) Rules, 2014",
     "rule": "10",
@@ -13499,17 +12380,6 @@
     "subs": []
    }
   ],
-  "144": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
   "148": [
    {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#8",
@@ -13587,17 +12457,6 @@
     "confidence": "high",
     "subs": [
      "6"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "3"
     ]
    },
    {
@@ -13938,27 +12797,6 @@
     ]
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 9,
-    "confidence": "high",
-    "subs": [
-     "6",
-     "4"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-appointment-and-qualification-of-directors-rules-2014-20261106-143017#3",
     "rule_set": "Companies (Appointment and Qualification of Directors) Rules, 2014",
     "rule": "3",
@@ -14113,15 +12951,6 @@
     "subs": [
      "1"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#8",
@@ -14281,15 +13110,6 @@
     "subs": []
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-appointment-and-qualification-of-directors-rules-2014-20261106-143017#1",
     "rule_set": "Companies (Appointment and Qualification of Directors) Rules, 2014",
     "rule": "1",
@@ -14391,17 +13211,6 @@
   ],
   "152": [
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
-   },
-   {
     "rule_id": "nidhi-rules-2014-20261107-081648#17",
     "rule_set": "Nidhi Rules, 2014",
     "rule": "17",
@@ -14410,39 +13219,6 @@
     "confidence": "high",
     "subs": [
      "4"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": [
-     "6"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#9",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "9",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "6"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#62C",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62C",
-    "title": "The provisions of this chapter shall apply to a listed entity which only has non-convertible debt securities listed, with an outstanding value of Rupees 571[Five] Thousand Crore and above and does not have any listed specified securities. Explanation (1)",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "6"
     ]
    },
    {
@@ -14917,15 +13693,6 @@
   ],
   "160": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-appointment-and-qualification-of-directors-rules-2014-20261106-143017#1",
     "rule_set": "Companies (Appointment and Qualification of Directors) Rules, 2014",
     "rule": "1",
@@ -15025,29 +13792,6 @@
     "subs": []
    }
   ],
-  "161": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 8,
-    "confidence": "high",
-    "subs": [
-     "1",
-     "3"
-    ]
-   }
-  ],
   "164": [
    {
     "rule_id": "the-companies-appointment-and-qualification-of-directors-rules-2014-20261106-143017#2",
@@ -15088,15 +13832,6 @@
     "rule_set": "Nidhi Rules, 2014",
     "rule": "17",
     "title": "Rules relating to Directors",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
     "mentions": 1,
     "confidence": "high",
     "subs": []
@@ -15149,20 +13884,6 @@
     "mentions": 0,
     "confidence": "low",
     "subs": []
-   }
-  ],
-  "166": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 8,
-    "confidence": "medium",
-    "subs": [
-     "2",
-     "3"
-    ]
    }
   ],
   "167": [
@@ -15301,15 +14022,6 @@
   ],
   "169": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "nclt-rules-2016-20261107-081709#79",
     "rule_set": "National Company Law Tribunal Rules, 2016",
     "rule": "79",
@@ -15431,15 +14143,6 @@
     "subs": [
      "3"
     ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
    },
    {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#1",
@@ -15635,17 +14338,6 @@
     "subs": []
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 5,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
-   },
-   {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#1",
     "rule_set": "Companies (Meetings of Board and its Powers) Rules, 2014",
     "rule": "1",
@@ -15740,17 +14432,6 @@
     ]
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 4,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
-   },
-   {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#1",
     "rule_set": "Companies (Meetings of Board and its Powers) Rules, 2014",
     "rule": "1",
@@ -15836,17 +14517,6 @@
     ]
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": [
-     "3"
-    ]
-   },
-   {
     "rule_id": "the-companies-incorporation-rules-2014-20261106-142435#41",
     "rule_set": "Companies (Incorporation) Rules, 2014",
     "rule": "41",
@@ -15866,17 +14536,6 @@
     "confidence": "medium",
     "subs": [
      "3"
-    ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "1"
     ]
    },
    {
@@ -15954,29 +14613,6 @@
   ],
   "180": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 19,
-    "confidence": "high",
-    "subs": [
-     "1",
-     "4"
-    ]
-   },
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
-   {
     "rule_id": "the-companies-acceptance-of-deposits-rules-2014-20261106-142547#2",
     "rule_set": "Companies (Acceptance of Deposits) Rules, 2014",
     "rule": "2",
@@ -16010,17 +14646,6 @@
     ]
    }
   ],
-  "181": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
   "182": [
    {
     "rule_id": "the-companies-corporate-social-responsibility-policy-rules-2014-csr-rules-20261106-142812#2",
@@ -16039,29 +14664,9 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
    }
   ],
   "184": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
    {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#16",
     "rule_set": "Companies (Meetings of Board and its Powers) Rules, 2014",
@@ -16174,17 +14779,6 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
    },
    {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#17",
@@ -16318,17 +14912,6 @@
     "confidence": "high",
     "subs": [
      "1"
-    ]
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 11,
-    "confidence": "high",
-    "subs": [
-     "2"
     ]
    },
    {
@@ -16581,15 +15164,6 @@
   ],
   "187": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-meetings-of-board-and-its-powers-rules-2014-20261106-143059#1",
     "rule_set": "Companies (Meetings of Board and its Powers) Rules, 2014",
     "rule": "1",
@@ -16691,17 +15265,6 @@
     "subs": []
    },
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 9,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
-   {
     "rule_id": "the-companies-accounts-rules-2014-20261106-142730#8",
     "rule_set": "Companies (Accounts) Rules, 2014",
     "rule": "8",
@@ -16749,17 +15312,6 @@
     "rule": "17",
     "title": "Payment to director for loss of office, etc. in connection with transfer of undertaking, property or shares",
     "mentions": 8,
-    "confidence": "medium",
-    "subs": [
-     "1"
-    ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
     "confidence": "medium",
     "subs": [
      "1"
@@ -17037,15 +15589,6 @@
   ],
   "196": [
    {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-appointment-and-remuneration-of-managerial-personnel-rules-2014-20261106-143106#1",
     "rule_set": "Companies (Appointment and Remuneration of Managerial Personnel) Rules, 2014",
     "rule": "1",
@@ -17125,15 +15668,6 @@
     "rule": "8",
     "title": "Issue of sweat equity shares",
     "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 11,
     "confidence": "high",
     "subs": []
    },
@@ -17252,33 +15786,6 @@
     "rule_set": "Companies (Share Capital and Debentures) Rules, 2014",
     "rule": "8",
     "title": "Issue of sweat equity shares",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#9",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "9",
-    "title": "",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#62C",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "62C",
-    "title": "The provisions of this chapter shall apply to a listed entity which only has non-convertible debt securities listed, with an outstanding value of Rupees 571[Five] Thousand Crore and above and does not have any listed specified securities. Explanation (1)",
     "mentions": 1,
     "confidence": "high",
     "subs": []
@@ -17442,15 +15949,6 @@
    }
   ],
   "203": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "the-companies-appointment-and-remuneration-of-managerial-personnel-rules-2014-20261106-143106#1",
     "rule_set": "Companies (Appointment and Remuneration of Managerial Personnel) Rules, 2014",
@@ -17783,15 +16281,6 @@
     ]
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 9,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-inspection-investigation-and-inquiry-rules-2014-20261106-143111#1",
     "rule_set": "Companies (Inspection, Investigation and Inquiry) Rules, 2014",
     "rule": "1",
@@ -18114,33 +16603,6 @@
     "rule": "25A",
     "title": "Merger or amalgamation of a foreign company with a Company and vice versa",
     "mentions": 4,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#29",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "29",
-    "title": "",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "LODR, 2015#57",
-    "rule_set": "Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-    "rule": "57",
-    "title": "",
-    "mentions": 2,
     "confidence": "high",
     "subs": []
    },
@@ -18760,17 +17222,6 @@
   ],
   "241": [
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 18,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
-   {
     "rule_id": "nclt-rules-2016-20261107-081709#81",
     "rule_set": "National Company Law Tribunal Rules, 2016",
     "rule": "81",
@@ -18804,20 +17255,6 @@
     ]
    }
   ],
-  "242": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 24,
-    "confidence": "high",
-    "subs": [
-     "1",
-     "2"
-    ]
-   }
-  ],
   "243": [
    {
     "rule_id": "nclt-rules-2016-20261107-081709#83",
@@ -18832,17 +17269,6 @@
    }
   ],
   "244": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 7,
-    "confidence": "high",
-    "subs": [
-     "1"
-    ]
-   },
    {
     "rule_id": "nclt-rules-2016-20261107-081709#83A",
     "rule_set": "National Company Law Tribunal Rules, 2016",
@@ -18911,17 +17337,6 @@
      "1",
      "4"
     ]
-   }
-  ],
-  "246": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
    }
   ],
   "247": [
@@ -19777,28 +18192,6 @@
     "subs": []
    }
   ],
-  "304": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
-  "305": [
-   {
-    "rule_id": "Resolution#10",
-    "rule_set": "Resolution",
-    "rule": "10",
-    "title": "Review periodically the Company’s corporate objectives and policies relating to corporate social responsibility",
-    "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
   "326": [
    {
     "rule_id": "companies-winding-up-rules-2020-20261107-081555#100",
@@ -20645,29 +19038,7 @@
     "subs": []
    }
   ],
-  "397": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 23,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
-   }
-  ],
   "398": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 13,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "nclt-rules-2016-20261107-081709#2",
     "rule_set": "National Company Law Tribunal Rules, 2016",
@@ -20913,17 +19284,6 @@
     "title": "Inspection, production and evidence of documents kept by Registrar",
     "mentions": 0,
     "confidence": "low",
-    "subs": []
-   }
-  ],
-  "402": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 9,
-    "confidence": "high",
     "subs": []
    }
   ],
@@ -21400,17 +19760,6 @@
     "subs": []
    }
   ],
-  "407": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
   "408": [
    {
     "rule_id": "companies-transfer-of-pending-proceedings-rules-2016-20261107-081722#2",
@@ -21418,15 +19767,6 @@
     "rule": "2",
     "title": "Definitions",
     "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 7,
     "confidence": "high",
     "subs": []
    },
@@ -21449,29 +19789,7 @@
     "subs": []
    }
   ],
-  "409": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": [
-     "3"
-    ]
-   }
-  ],
   "410": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 7,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "nclat-recruitment-salary-and-other-terms-and-conditions-of-service-of-officers-and-other-employees-rules-2020-20261107-081755#2",
     "rule_set": "National Company Law Appellate Tribunal (Recruitment, Salary and other Terms and Conditions of Service of Officers and other Employees) Rules, 2020",
@@ -21482,31 +19800,7 @@
     "subs": []
    }
   ],
-  "411": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": [
-     "3"
-    ]
-   }
-  ],
   "412": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 6,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
-   },
    {
     "rule_id": "nclat-salaries-allowances-and-other-terms-and-conditions-of-service-of-chairperson-and-other-members-rules-2015-20261107-081749#2",
     "rule_set": "National Company Law Appellate Tribunal (Salaries, Allowances and other Terms and Conditions of Service of Chairperson and other Members) Rules, 2015",
@@ -21524,17 +19818,6 @@
     "rule": "16",
     "title": "Applicability of rules",
     "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
-  "413": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
     "confidence": "high",
     "subs": []
    }
@@ -21865,27 +20148,7 @@
     "subs": []
    }
   ],
-  "415": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
   "418": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   },
    {
     "rule_id": "nclat-recruitment-salary-and-other-terms-and-conditions-of-service-of-officers-and-other-employees-rules-2020-20261107-081755#1",
     "rule_set": "National Company Law Appellate Tribunal (Recruitment, Salary and other Terms and Conditions of Service of Officers and other Employees) Rules, 2020",
@@ -22219,17 +20482,6 @@
     ]
    }
   ],
-  "420": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
   "421": [
    {
     "rule_id": "nclat-rules-2016-20261107-081714#2",
@@ -22241,79 +20493,15 @@
     "subs": [
      "1"
     ]
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": [
-     "4"
-    ]
-   }
-  ],
-  "423": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 5,
-    "confidence": "high",
-    "subs": []
    }
   ],
   "424": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "nclat-rules-2016-20261107-081714#77",
     "rule_set": "National Company Law Appellate Tribunal Rules, 2016",
     "rule": "77",
     "title": "Procedure for examination of witnesses, issue of Commissions",
     "mentions": 1,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
-  "425": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": []
-   }
-  ],
-  "426": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
-  "431": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
     "confidence": "high",
     "subs": []
    }
@@ -22365,27 +20553,9 @@
     "mentions": 1,
     "confidence": "high",
     "subs": []
-   },
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 4,
-    "confidence": "high",
-    "subs": []
    }
   ],
   "434": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 3,
-    "confidence": "high",
-    "subs": []
-   },
    {
     "rule_id": "nclt-rules-2016-20261107-081709#2",
     "rule_set": "National Company Law Tribunal Rules, 2016",
@@ -22733,19 +20903,6 @@
     "mentions": 0,
     "confidence": "low",
     "subs": []
-   }
-  ],
-  "443": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "high",
-    "subs": [
-     "2"
-    ]
    }
   ],
   "447": [
@@ -23227,15 +21384,6 @@
     ]
    },
    {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
-    "subs": []
-   },
-   {
     "rule_id": "the-companies-miscellaneous-rules-2014-20261107-081911#1",
     "rule_set": "Companies (Miscellaneous) Rules, 2014",
     "rule": "1",
@@ -23494,28 +21642,6 @@
     "title": "A member shall make an application for temporary surrender of his membership of the Organisation at least thirty days before he- (a) becomes a person not resident in India; (b) takes up employment; or [24][Explanation",
     "mentions": 0,
     "confidence": "low",
-    "subs": []
-   }
-  ],
-  "460": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 1,
-    "confidence": "medium",
-    "subs": []
-   }
-  ],
-  "461": [
-   {
-    "rule_id": "Company Law#13",
-    "rule_set": "Company Law",
-    "rule": "13",
-    "title": "This resolution purports to be signed by three directors, namely Bakhshish Singh, B.N",
-    "mentions": 2,
-    "confidence": "medium",
     "subs": []
    }
   ],
